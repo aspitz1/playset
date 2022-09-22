@@ -1,0 +1,9 @@
+.card-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.card-img {
+    height: 200px;
+}
