@@ -1,3 +1,5 @@
+import AddNewCard from '../AddNewCard/AddNewCard';
+
 import './CardDetails.css';
 
 function CardDetails({ selectedCard, error }) {
@@ -11,7 +13,8 @@ function CardDetails({ selectedCard, error }) {
         text,
         legalities,
         imageUrl,
-        artist
+        artist, 
+        inCollection
     } = selectedCard;
 
     const legalitiesList = legalities ? legalities.map((legality, i) => {
@@ -36,6 +39,7 @@ function CardDetails({ selectedCard, error }) {
                     {legalitiesList}
                 </ul>
             </article>
+            {!inCollection && name ? <AddNewCard /> : null}
         </main>
     );
 }

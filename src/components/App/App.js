@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import AllCards from '../AllCards/AllCards';
 import FindNewCard from '../FindNewCard/FindNewCard';
 import CardDetails from '../CardDetails/CardDetails';
+import SearchCollection from '../SearchCollection/SearchCollection';
 
 import { getCollection, findCardsByName, findCardsById } from '../../apiCalls/apiCalls';
 
@@ -35,11 +36,11 @@ function App() {
         setSelectedCard({});
         const foundCard = searchResults.find(card => card.magicApiId === magicApiId);
         if (foundCard) {   
-            setSelectedCard(foundCard);
+            setSelectedCard({ ...foundCard, inCollection: false });
         } else {
             findCardsById(magicApiId)
                 .then(data => {
-                    setSelectedCard(data);
+                    setSelectedCard({ ...data, inCollection: true });
                     setError('');
                 })
                 .catch(err => setError(err));
@@ -51,7 +52,7 @@ function App() {
                 <Route path='/' element={
                     <div>
                         <Header buttonText={'search collection'} setError={setError} />
-                        <AllCards cards={collection} error={error} showCardInfo={showCardInfo} />
+                        <AllCards cards={collection} error={error} status={'Loading...'} showCardInfo={showCardInfo} />
                     </div>
                 } />
                 <Route path='/findNewCard' element={
@@ -63,7 +64,13 @@ function App() {
                 <Route path='/searchResults' element={
                     <div>
                         <Header buttonText={'home'} setError={setError} />
-                        <AllCards cards={searchResults} error={error} showCardInfo={showCardInfo} />
+                        <AllCards cards={searchResults} error={error} status={'Loading...'} showCardInfo={showCardInfo} />
+                    </div>
+                } />
+                <Route path='searchCollection' element={
+                    <div>
+                        <Header buttonText={'home'} setError={setError} />
+                        <SearchCollection collection={collection} showCardInfo={showCardInfo} />
                     </div>
                 } />
                 <Route path='/card/:magicApiId' element={
@@ -72,7 +79,6 @@ function App() {
                         <CardDetails selectedCard={selectedCard} error={error} />
                     </div>
                 }
-                
                 />
             </Routes>
     );

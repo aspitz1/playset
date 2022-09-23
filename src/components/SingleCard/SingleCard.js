@@ -11,7 +11,12 @@ function SingleCard({ card, showCardInfo }) {
             onClick={() => showCardInfo(magicApiId)}
         >
             <img className='card-img' src={imageUrl} alt={name} id={id} />
-            {amount ? <p>Amount: {amount}</p> : null}
+            {amount ? 
+                <div>
+                    <p>Amount: {amount}</p>
+                    <button>UPDATE</button>
+                </div>
+            : null}
         </Link>
     )
 }
