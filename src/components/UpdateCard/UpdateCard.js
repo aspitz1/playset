@@ -3,10 +3,6 @@ import { useState, useEffect } from 'react';
 function UpdateCard({ amount, handleUpdateCardInCollection, handleDeleteCardFromCollection }) {
     const [newAmount, setNewAmount] = useState(amount);
 
-    useEffect(() => {
-        setNewAmount(amount);
-    }, [amount]);
-
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
         handleUpdateCardInCollection(newAmount);
