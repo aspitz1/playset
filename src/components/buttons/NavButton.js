@@ -1,6 +1,11 @@
 function NavButton({ buttonText, setError }) {
     return (
-        <button className='navButton' onClick={() => setError('')} >{ buttonText }</button>
+        <button 
+            className='navButton'   
+            onClick={() => setError('')}    
+        >
+            { buttonText }
+        </button>
     )
 } 
 
