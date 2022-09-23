@@ -1,8 +1,9 @@
 import AddNewCard from '../AddNewCard/AddNewCard';
+import UpdateCard from '../UpdateCard/UpdateCard';
 
 import './CardDetails.css';
 
-function CardDetails({ selectedCard, error }) {
+function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection }) {
     const { 
         name,
         manaCost,
@@ -14,7 +15,8 @@ function CardDetails({ selectedCard, error }) {
         legalities,
         imageUrl,
         artist, 
-        inCollection
+        inCollection, 
+        currentAmount
     } = selectedCard;
 
     const legalitiesList = legalities ? legalities.map((legality, i) => {
@@ -34,12 +36,19 @@ function CardDetails({ selectedCard, error }) {
             <article>
                 <p>{type} - <span>{manaCost}</span></p>
                 <p>{rarity}</p>
+                <p>{setName}</p>
                 <p className='card-text'>{text}</p>
                 <ul>
                     {legalitiesList}
                 </ul>
             </article>
-            {!inCollection && name ? <AddNewCard /> : null}
+            {!inCollection && name ? 
+                <AddNewCard handleAddCardToCollection={handleAddCardToCollection} /> : 
+                <UpdateCard 
+                    currentAmount={currentAmount} 
+                    handleUpdateCardInCollection={handleUpdateCardInCollection}
+                />  
+            }
         </main>
     );
 }

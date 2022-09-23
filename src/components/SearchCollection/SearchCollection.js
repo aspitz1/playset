@@ -9,7 +9,7 @@ function SearchCollection({ collection, setFilterCredentials, setFilteredCards, 
 
     return (
         <section>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <input 
                     type='text' 
                     value={filterCredentials}  
