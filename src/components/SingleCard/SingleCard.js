@@ -1,12 +1,18 @@
+import { Link } from 'react-router-dom';
+
 import './SingleCard.css';
 
-function SingleCard({ card }) {
-    const { imageUrl, id, amount, name } = card;
+function SingleCard({ card, showCardInfo }) {
+    const { imageUrl, id, amount, name, magicApiId } = card;
     return (
-        <button className='card-btn'>
+        <Link 
+            to={`/card/${magicApiId}`} 
+            className='card-btn' 
+            onClick={() => showCardInfo(magicApiId)}
+        >
             <img className='card-img' src={imageUrl} alt={name} id={id} />
-            <p>Amount: {amount}</p>
-        </button>
+            {amount ? <p>Amount: {amount}</p> : null}
+        </Link>
     )
 }
 

@@ -1,4 +1,9 @@
-.card-btn {
+.card-btn,
+p {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
     border: none;
     background: none;
     cursor: pointer;

@@ -1,6 +1,6 @@
-function NavButton({ buttonText }) {
+function NavButton({ buttonText, setError }) {
     return (
-        <button className='navButton'>{ buttonText }</button>
+        <button className='navButton' onClick={() => setError('')} >{ buttonText }</button>
     )
 } 
 
