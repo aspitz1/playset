@@ -27,13 +27,13 @@ function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpd
 
     return (
         <main>
-            <h2>{name} - <span>{colorIdentity}</span></h2>
+            <h2>{name} <span>{colorIdentity}</span></h2>
             <figure>
                 <img className='card-details-img' src={imageUrl} alt={name} />
                 <figcaption>{artist}</figcaption>
             </figure>
             <article>
-                <p>{type} - <span>{manaCost}</span></p>
+                <p>{type} <span>{manaCost}</span></p>
                 <p>{rarity}</p>
                 <p>{setName}</p>
                 <p className='card-text'>{text}</p>

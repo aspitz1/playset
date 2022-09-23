@@ -126,6 +126,9 @@ function App() {
                 
                 setCollection(updatedCollection);
                 setDeleteMsg(data.message);
+                setTimeout(() => {
+                    setDeleteMsg('');
+                }, 5000);
             })
             .catch(err => setError(err.message));
     }
@@ -143,11 +146,15 @@ function App() {
                             filterCredentials={filterCredentials}
                             setError={setError} 
                         />
-                        <AllCards 
-                            cards={filterCredentials ? filteredCards : collection} 
-                            status={filterCredentials ? 'No matches where found.' : 'Loading...'} 
-                            showCardInfo={showCardInfo} 
-                        />
+                        {
+                            collection.length ?
+                            <AllCards 
+                                cards={filterCredentials ? filteredCards : collection} 
+                                status={filterCredentials ? 'No matches where found.' : 'Loading...'} 
+                                showCardInfo={showCardInfo} 
+                            /> :
+                            <h2>Your collection is empty.</h2>
+                        }
                     </div>
                 } />
                 <Route path='/findNewCard' element={
