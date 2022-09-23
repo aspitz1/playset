@@ -146,15 +146,11 @@ function App() {
                             filterCredentials={filterCredentials}
                             setError={setError} 
                         />
-                        {
-                            collection.length ?
-                            <AllCards 
-                                cards={filterCredentials ? filteredCards : collection} 
-                                status={filterCredentials ? 'No matches where found.' : 'Loading...'} 
-                                showCardInfo={showCardInfo} 
-                            /> :
-                            <h2>Your collection is empty.</h2>
-                        }
+                        <AllCards 
+                            cards={filterCredentials ? filteredCards : collection} 
+                            status={filterCredentials ? 'No matches where found.' : 'Loading...'} 
+                            showCardInfo={showCardInfo} 
+                        />
                     </div>
                 } />
                 <Route path='/findNewCard' element={
