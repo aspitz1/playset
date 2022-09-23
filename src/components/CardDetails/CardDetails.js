@@ -3,7 +3,7 @@ import UpdateCard from '../UpdateCard/UpdateCard';
 
 import './CardDetails.css';
 
-function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection }) {
+function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection, handleDeleteCardFromCollection, deleteMsg }) {
     const { 
         name,
         manaCost,
@@ -16,7 +16,7 @@ function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpd
         imageUrl,
         artist, 
         inCollection, 
-        currentAmount
+        amount
     } = selectedCard;
 
     const legalitiesList = legalities ? legalities.map((legality, i) => {
@@ -27,8 +27,7 @@ function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpd
 
     return (
         <main>
-            {name ? <h2>{name} - <span>{colorIdentity}</span></h2> : <h2>Loading...</h2>}
-            {error ? <p>{error}</p> : null}
+            <h2>{name} - <span>{colorIdentity}</span></h2>
             <figure>
                 <img className='card-details-img' src={imageUrl} alt={name} />
                 <figcaption>{artist}</figcaption>
@@ -41,14 +40,19 @@ function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpd
                 <ul>
                     {legalitiesList}
                 </ul>
-            </article>
-            {!inCollection && name ? 
-                <AddNewCard handleAddCardToCollection={handleAddCardToCollection} /> : 
-                <UpdateCard 
-                    currentAmount={currentAmount} 
-                    handleUpdateCardInCollection={handleUpdateCardInCollection}
-                />  
-            }
+            </article> 
+            <section>
+                {error ? <p>{error}</p> : null}
+                {deleteMsg ? <p>{deleteMsg}</p> : null}
+                {!inCollection && name ? 
+                    <AddNewCard handleAddCardToCollection={handleAddCardToCollection} /> : 
+                    <UpdateCard 
+                        amount={amount} 
+                        handleUpdateCardInCollection={handleUpdateCardInCollection}
+                        handleDeleteCardFromCollection={handleDeleteCardFromCollection}
+                    />  
+                }
+            </section> 
         </main>
     );
 }

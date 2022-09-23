@@ -22,6 +22,7 @@ function App() {
     const [filterCredentials, setFilterCredentials] = useState('');
     const [filteredCards, setFilteredCards] = useState([]);
     const [error, setError] = useState('');
+    const [deleteMsg, setDeleteMsg] = useState('');
 
     useEffect(() => {
         getCollection()
@@ -64,17 +65,29 @@ function App() {
                 }
             ])
         })
-        .catch(err => setError(err));
+        .catch(err => setError(err.message));
     }
 
     const handleUpdateCardInCollection = (newAmount) => {
-        const cardFromCollection = collection.find(card => card.name === selectedCard.name);
+        const cardFromCollection = collection.find(card => card.magicApiId === selectedCard.magicApiId);
         updateCardInCollection({
             ...cardFromCollection,
             amount: newAmount
         })
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+        .then(data => {
+            const updatedCards = collection.map(card => {
+                if(card.id === data.card.id) {
+                    card.amount = data.card.amount
+                }
+                return card;
+            });
+
+            const updatedSelectedCard = { ...selectedCard, amount: data.card.amount };
+
+            setSelectedCard(updatedSelectedCard);
+            setCollection(updatedCards);
+        })
+        .catch(err => setError(err.message));
     }
 
     const showCardInfo = (magicApiId) => {
@@ -85,7 +98,7 @@ function App() {
             setSelectedCard({ 
                 ...foundCard, 
                 inCollection: card ? true : false,
-                currentAmount: card ? card.amount : null  
+                amount: card ? card.amount : 0  
             });
         } else {
             findCardsById(magicApiId)
@@ -93,12 +106,28 @@ function App() {
                     setSelectedCard({ 
                         ...data, 
                         inCollection: true,
-                        currentAmount: card ? card.amount : null
+                        amount: card ? card.amount : 0
                     });
                     setError('');
                 })
-                .catch(err => setError(err));
+                .catch(err => setError(err.message));
         }
+    }
+
+    const handleDeleteCardFromCollection = () => {
+        const card = collection.find(card => card.magicApiId === selectedCard.magicApiId); 
+        deleteCardFromCollection(card.id)
+            .then(data => {
+                const updatedCollection = collection.filter(collectionCards => card.id !== collectionCards.id);
+                setSelectedCard({
+                    ...selectedCard,
+                    inCollection: false
+                });
+                
+                setCollection(updatedCollection);
+                setDeleteMsg(data.message);
+            })
+            .catch(err => setError(err.message));
     }
 
     return (
@@ -144,7 +173,9 @@ function App() {
                             selectedCard={selectedCard} 
                             handleAddCardToCollection={handleAddCardToCollection}
                             handleUpdateCardInCollection={handleUpdateCardInCollection}
+                            handleDeleteCardFromCollection={handleDeleteCardFromCollection}
                             error={error} 
+                            deleteMsg={deleteMsg}
                         />
                     </div>
                 }

@@ -19,7 +19,7 @@ function SingleCard({ card, showCardInfo }) {
                 : null}
             </Link>
             <Link to={'/card/:magicApiId'} onClick={() => showCardInfo(magicApiId)}>
-                <UpdateBtn />
+                {id ? <UpdateBtn /> : null}
             </Link>
         </div>
     )

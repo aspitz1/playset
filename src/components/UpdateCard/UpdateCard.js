@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
 
-function UpdateCard({ currentAmount, handleUpdateCardInCollection }) {
-    const [newAmount, setNewAmount] = useState(currentAmount)
+function UpdateCard({ amount, handleUpdateCardInCollection, handleDeleteCardFromCollection }) {
+    const [newAmount, setNewAmount] = useState(amount);
 
     useEffect(() => {
-        setNewAmount(currentAmount)
-    }, [currentAmount]);
+        setNewAmount(amount);
+    }, [amount]);
 
     const handleUpdateSubmit = (e) => {
         e.preventDefault();
         handleUpdateCardInCollection(newAmount);
+    }
+
+    const handleDelete = (e) => {
+        e.currentTarget.disabled = true;
+        handleDeleteCardFromCollection();
     }
 
     return (
@@ -25,9 +30,9 @@ function UpdateCard({ currentAmount, handleUpdateCardInCollection }) {
                         onChange={(e) => setNewAmount(e.target.value)}
                     />
                 </label>
-                <button>UPDATE</button>
+                <button type='submit' disabled={newAmount == amount}>UPDATE</button>
             </form>
-            <button>DELETE</button>
+            <button disabled={false} onClick={(e) => handleDelete(e)}>DELETE</button>
         </div>
     )
 }

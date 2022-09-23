@@ -74,7 +74,6 @@ const deleteCardFromCollection = async (id) => {
         const response = await fetch(`https://playset-api.onrender.com/api/cards/${id}`, {
             method: 'DELETE'
         });
-
         if(!response.ok) {
             const errMsg = await response.json();
             throw new Error(errMsg);
