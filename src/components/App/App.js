@@ -13,6 +13,8 @@ function App() {
     const [searchResults, setSearchResults] = useState([]);
     const [selectedCard, setSelectedCard] = useState({});
     const [collection, setCollection] = useState([]);
+    const [filterCredentials, setFilterCredentials] = useState('');
+    const [filteredCards, setFilteredCards] = useState([]);
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -51,8 +53,20 @@ function App() {
             <Routes>
                 <Route path='/' element={
                     <div>
-                        <Header buttonText={'search collection'} setError={setError} />
-                        <AllCards cards={collection} error={error} status={'Loading...'} showCardInfo={showCardInfo} />
+                        <Header 
+                            buttonText={'search collection'} 
+                            collection={collection} 
+                            showCardInfo={showCardInfo}
+                            setFilterCredentials={setFilterCredentials}
+                            setFilteredCards={setFilteredCards} 
+                            filterCredentials={filterCredentials}
+                            setError={setError} 
+                        />
+                        <AllCards 
+                            cards={filterCredentials ? filteredCards : collection} 
+                            status={'No matches where found.'} 
+                            showCardInfo={showCardInfo} 
+                        />
                     </div>
                 } />
                 <Route path='/findNewCard' element={
@@ -64,13 +78,11 @@ function App() {
                 <Route path='/searchResults' element={
                     <div>
                         <Header buttonText={'home'} setError={setError} />
-                        <AllCards cards={searchResults} error={error} status={'Loading...'} showCardInfo={showCardInfo} />
-                    </div>
-                } />
-                <Route path='searchCollection' element={
-                    <div>
-                        <Header buttonText={'home'} setError={setError} />
-                        <SearchCollection collection={collection} showCardInfo={showCardInfo} />
+                        <AllCards 
+                            cards={searchResults} 
+                            error={error} status={'Loading...'} 
+                            showCardInfo={showCardInfo} 
+                        />
                     </div>
                 } />
                 <Route path='/card/:magicApiId' element={
