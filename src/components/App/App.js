@@ -126,6 +126,9 @@ function App() {
                 
                 setCollection(updatedCollection);
                 setDeleteMsg(data.message);
+                setTimeout(() => {
+                    setDeleteMsg('');
+                }, 5000);
             })
             .catch(err => setError(err.message));
     }
