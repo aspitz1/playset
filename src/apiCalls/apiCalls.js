@@ -4,9 +4,10 @@ const getCollection = async (setFunction) => {
         if(!response.ok) {
             throw new Error('Sorry, looks like something went wrong.');
         } else {
-            const data = response.json();
+            const data = await response.json();
             return data;
         }
+
     } catch(err) {
         throw err;
     }
@@ -20,9 +21,10 @@ const findCardsByName = async (name) => {
             const errMsg = await response.json();
             throw new Error(errMsg);
         } else {
-            const data = response.json();
+            const data = await response.json();
             return data;
         }
+
     } catch(err) {
         throw err;
     }
@@ -35,9 +37,74 @@ const findCardsById = async (magicApiId) => {
             const errMsg = await response.json();
             throw new Error(errMsg);
         } else {
-            const data = response.json();
+            const data = await response.json();
             return data;
         }
+
+    } catch(err) {
+        throw err;
+    }
+}
+
+const addCardToCollection = async (magicCard) => {
+    try {
+        const response = await fetch('https://playset-api.onrender.com/api/cards', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(magicCard)
+        });
+
+        if(!response.ok) {
+            const errMsg = await response.json();
+            throw new Error(errMsg);
+        } else {
+            const data = await response.json();
+            return data;
+        }
+
+    } catch(err) {
+        throw err;
+    }
+}
+
+const deleteCardFromCollection = async (id) => {
+    try {
+        const response = await fetch(`https://playset-api.onrender.com/api/cards/${id}`, {
+            method: 'DELETE'
+        });
+        if(!response.ok) {
+            const errMsg = await response.json();
+            throw new Error(errMsg);
+        } else {
+            const data = await response.json();
+            return data;
+        }
+
+    } catch(err) {
+        throw err;
+    }
+}
+
+const updateCardInCollection = async (magicCard) => {
+    try {
+        const response = await fetch(`https://playset-api.onrender.com/api/cards/${magicCard.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(magicCard)
+        });
+
+        if(!response.ok) {
+            const errMsg = await response.json();
+            throw new Error(errMsg);
+        } else {
+            const data = await response.json();
+            return data;
+        }
+
     } catch(err) {
         throw err;
     }
@@ -46,5 +113,8 @@ const findCardsById = async (magicApiId) => {
 export {
     getCollection,
     findCardsByName,
-    findCardsById
+    findCardsById, 
+    addCardToCollection,
+    updateCardInCollection,
+    deleteCardFromCollection
 }

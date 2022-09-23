@@ -1,11 +1,6 @@
 import { useState } from 'react';
 
-import AllCards from "../AllCards/AllCards";
-
-function SearchCollection({ collection, showCardInfo }) {
-    const [filterCredentials, setFilterCredentials] = useState('');
-    const [filteredCards, setFilteredCards] = useState([]);
-
+function SearchCollection({ collection, setFilterCredentials, setFilteredCards, filterCredentials }) {
     const handleChange = (e) => {
         setFilterCredentials(e.target.value.toLowerCase());
         const cards = collection.filter(card => card.name.toLowerCase().includes(filterCredentials));
@@ -14,7 +9,7 @@ function SearchCollection({ collection, showCardInfo }) {
 
     return (
         <section>
-            <form>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <input 
                     type='text' 
                     value={filterCredentials}  
@@ -22,11 +17,6 @@ function SearchCollection({ collection, showCardInfo }) {
                     onChange={(e) => handleChange(e)}
                 />
             </form>
-            <AllCards 
-                cards={filterCredentials ? filteredCards : collection} 
-                status={'No matches where found.'} 
-                showCardInfo={showCardInfo} 
-            />
         </section>
     )
 }

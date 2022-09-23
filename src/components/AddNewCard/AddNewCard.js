@@ -1,14 +1,20 @@
 import { useState } from 'react';
 
-function AddNewCard() {
+function AddNewCard({ handleAddCardToCollection }) {
     const [numOfCards, setNumOfCards] = useState(0);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleAddCardToCollection(numOfCards)
+        setNumOfCards(0);
+    }
+
     return (
-        <form>
+        <form onSubmit={(e) => handleSubmit(e)}>
             <input 
                 type='number' 
                 min='1'
-                max='4'
+                max='40'
                 value={numOfCards} 
                 onChange={(e) => setNumOfCards(e.target.value)} 
             />

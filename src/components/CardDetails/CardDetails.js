@@ -1,8 +1,9 @@
 import AddNewCard from '../AddNewCard/AddNewCard';
+import UpdateCard from '../UpdateCard/UpdateCard';
 
 import './CardDetails.css';
 
-function CardDetails({ selectedCard, error }) {
+function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection, handleDeleteCardFromCollection, deleteMsg }) {
     const { 
         name,
         manaCost,
@@ -14,7 +15,8 @@ function CardDetails({ selectedCard, error }) {
         legalities,
         imageUrl,
         artist, 
-        inCollection
+        inCollection, 
+        amount
     } = selectedCard;
 
     const legalitiesList = legalities ? legalities.map((legality, i) => {
@@ -25,8 +27,7 @@ function CardDetails({ selectedCard, error }) {
 
     return (
         <main>
-            {name ? <h2>{name} - <span>{colorIdentity}</span></h2> : <h2>Loading...</h2>}
-            {error ? <p>{error}</p> : null}
+            <h2>{name} - <span>{colorIdentity}</span></h2>
             <figure>
                 <img className='card-details-img' src={imageUrl} alt={name} />
                 <figcaption>{artist}</figcaption>
@@ -34,12 +35,24 @@ function CardDetails({ selectedCard, error }) {
             <article>
                 <p>{type} - <span>{manaCost}</span></p>
                 <p>{rarity}</p>
+                <p>{setName}</p>
                 <p className='card-text'>{text}</p>
                 <ul>
                     {legalitiesList}
                 </ul>
-            </article>
-            {!inCollection && name ? <AddNewCard /> : null}
+            </article> 
+            <section>
+                {error ? <p>{error}</p> : null}
+                {deleteMsg ? <p>{deleteMsg}</p> : null}
+                {!inCollection && name ? 
+                    <AddNewCard handleAddCardToCollection={handleAddCardToCollection} /> : 
+                    <UpdateCard 
+                        amount={amount} 
+                        handleUpdateCardInCollection={handleUpdateCardInCollection}
+                        handleDeleteCardFromCollection={handleDeleteCardFromCollection}
+                    />  
+                }
+            </section> 
         </main>
     );
 }
