@@ -134,57 +134,73 @@ function App() {
     }
 
     return (
-            <Routes>
-                <Route path='/' element={
-                    <div>
-                        <Header 
-                            buttonText={'search collection'} 
-                            collection={collection} 
-                            showCardInfo={showCardInfo}
-                            setFilterCredentials={setFilterCredentials}
-                            setFilteredCards={setFilteredCards} 
-                            filterCredentials={filterCredentials}
-                            setError={setError} 
-                        />
-                        <AllCards 
-                            cards={filterCredentials ? filteredCards : collection} 
-                            status={filterCredentials ? 'No matches where found.' : 'Loading...'} 
-                            showCardInfo={showCardInfo} 
-                        />
-                    </div>
-                } />
-                <Route path='/findNewCard' element={
-                    <div>
-                        <Header buttonText={'home'} setError={setError} />
-                        <FindNewCard handleNewCardSearch={handleNewCardSearch} />
-                    </div>
-                } />
-                <Route path='/searchResults' element={
-                    <div>
-                        <Header buttonText={'home'} setError={setError} />
-                        <AllCards 
-                            cards={searchResults} 
-                            error={error} status={'Loading...'} 
-                            showCardInfo={showCardInfo} 
-                        />
-                    </div>
-                } />
-                <Route path='/card/:magicApiId' element={
-                    <div>
-                        <Header buttonText={'home'} setError={setError} />
-                        <CardDetails 
-                            selectedCard={selectedCard} 
-                            handleAddCardToCollection={handleAddCardToCollection}
-                            handleUpdateCardInCollection={handleUpdateCardInCollection}
-                            handleDeleteCardFromCollection={handleDeleteCardFromCollection}
-                            showCardInfo={showCardInfo}
-                            error={error} 
-                            deleteMsg={deleteMsg}
-                        />
-                    </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <Header
+                buttonText={"search collection"}
+                collection={collection}
+                showCardInfo={showCardInfo}
+                setFilterCredentials={setFilterCredentials}
+                setFilteredCards={setFilteredCards}
+                filterCredentials={filterCredentials}
+                setError={setError}
+              />
+              <AllCards
+                cards={filterCredentials ? filteredCards : collection}
+                status={
+                  filterCredentials ? "No matches where found." : "Loading..."
                 }
-                />
-            </Routes>
+                showCardInfo={showCardInfo}
+                handleNewCardSearch={null}
+              />
+            </div>
+          }
+        />
+        <Route
+          path="/findNewCard"
+          element={
+            <div>
+              <Header buttonText={"home"} setError={setError} />
+              <FindNewCard handleNewCardSearch={handleNewCardSearch} />
+            </div>
+          }
+        />
+        <Route
+          path="/:cardName"
+          element={
+            <div>
+              <Header buttonText={"home"} setError={setError} />
+              <AllCards
+                cards={searchResults}
+                error={error}
+                status={"Loading..."}
+                handleNewCardSearch={handleNewCardSearch}
+                showCardInfo={showCardInfo}
+              />
+            </div>
+          }
+        />
+        <Route
+          path="/card/:magicApiId"
+          element={
+            <div>
+              <Header buttonText={"home"} setError={setError} />
+              <CardDetails
+                selectedCard={selectedCard}
+                handleAddCardToCollection={handleAddCardToCollection}
+                handleUpdateCardInCollection={handleUpdateCardInCollection}
+                handleDeleteCardFromCollection={handleDeleteCardFromCollection}
+                showCardInfo={showCardInfo}
+                error={error}
+                deleteMsg={deleteMsg}
+              />
+            </div>
+          }
+        />
+      </Routes>
     );
 }
 

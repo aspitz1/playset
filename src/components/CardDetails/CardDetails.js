@@ -28,15 +28,15 @@ function CardDetails({ showCardInfo, selectedCard, error, handleAddCardToCollect
         amount
     } = selectedCard;
 
-    const legalitiesList = legalities ? legalities.map((legality, i) => {
+    const legalitiesList = legalities && legalities.map((legality, i) => {
         return (
             <li key={i}>{legality.format}: {legality.legality}</li>
         )
-    }) : null;
+    });
 
     return (
         <main>
-            {!name ? <h2>Loading...</h2>: 
+            {!name ? <h2>Loading...</h2> : 
             <div>
                 <h2>{name} <span>{colorIdentity}</span></h2>
                 <figure>
