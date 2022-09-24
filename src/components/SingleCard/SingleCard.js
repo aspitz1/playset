@@ -7,7 +7,7 @@ import './SingleCard.css';
 function SingleCard({ card }) {
     const { imageUrl, id, amount, name, magicApiId } = card;
     return (
-        <div>
+        <div className='card-wrapper'>
             <Link to={`/card/${magicApiId}`} className='card-btn'>
                 <img className='card-img' src={imageUrl} alt={name} id={id} />
                 {amount && <p>Amount: {amount}</p>}
