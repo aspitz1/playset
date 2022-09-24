@@ -39,7 +39,7 @@ function CardDetails({ showCardInfo, selectedCard, error, handleAddCardToCollect
     return (
       <main>
         {!name ? (
-          <h2>Loading...</h2>
+          <h2 className='loading'>Loading...</h2>
         ) : (
           <div className="single-card-wrapper">
             <article className='single-card-description'>
@@ -60,16 +60,16 @@ function CardDetails({ showCardInfo, selectedCard, error, handleAddCardToCollect
               <p className="card-text">{text}</p>
               <ul className="legalities-list">{legalitiesList}</ul>
             </article>
-            <section>
-              {error ? <p>{error}</p> : null}
-              {updateMsg ? <p>{updateMsg}</p> : null}
+            <section className='update-add-wrapper'>
               {!inCollection && name ? (
                 <AddNewCard
+                  error={error}
                   handleAddCardToCollection={handleAddCardToCollection}
                 />
               ) : (
                 <UpdateCard
                   amount={amount}
+                  updateMsg={updateMsg}
                   handleUpdateCardInCollection={handleUpdateCardInCollection}
                   handleDeleteCardFromCollection={
                     handleDeleteCardFromCollection

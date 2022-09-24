@@ -25,8 +25,8 @@ function AllCards({ handleNewCardSearch, cards, showCardInfo, error, status }) {
 
   return (
     <main>
-      {!cards.length && !error ? <h2>{status}</h2> : null}
-      {error && <h2>{error}</h2>}
+      {!cards.length && !error ? <h2 className='loading'>{status}</h2> : null}
+      {error && <h2 className='no-cards-found'>{error}</h2>}
       <section className="all-cards">{singleCards}</section>
     </main>
   );

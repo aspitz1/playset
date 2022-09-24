@@ -1,0 +1,56 @@
+.find-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    width: 100vw;
+}
+
+.find-new-card-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fbbcee;
+    height: 30vh;
+    min-width: 800px;
+    max-width: 800px;
+    border-radius: 50px;
+}
+
+.find-new-card-input {
+    margin-bottom: 10px;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    text-align: center;
+    border-radius: 40px;
+    border: 1px solid #2B2749;
+}
+
+.find-new-card-btn {
+    padding: 15px 40px;
+    border-radius: 40px;
+    border: 1px solid #2B2749;
+    background: #7161EF;
+    cursor: pointer;
+    transition: all .15s ease-out;
+}
+
+.find-new-card-btn:hover {
+    background: #2B2749;
+    color: #FBF1F2;
+}
+
+.find-new-card-btn:disabled {
+    background: #ac9af0;
+    color: #494563;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .find-new-card-form {
+        min-width: 100vw;
+        max-width: 100vw;
+        border-radius: 0;
+    }
+}

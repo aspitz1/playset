@@ -9,4 +9,9 @@ main {
     grid-gap: 20px;
     justify-content: center;
 }
-    
+
+.loading,
+.no-cards-found {
+    text-align: center;
+    color: #fbbcee;
+}

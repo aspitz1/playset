@@ -5,8 +5,10 @@
     text-align: center;
 }
 
-.single-card-description {
+.single-card-description,
+.update-add-wrapper {
     min-width: 800px;
+    max-width: 800px;
 }
 
 .name {
@@ -111,12 +113,34 @@
     background-color: #02733f;
 }
 
+.GU {
+    background: linear-gradient(#0e67ab, #02733f);
+}
+
+.GW {
+    background: linear-gradient(#f9faf4, #02733f);
+}
+
+.GUW {
+    background: linear-gradient(#f9faf4, #0e67ab, #02733f);
+}
+
+.BGR {
+    color: #fff;
+    background: linear-gradient(#d31d29, #140a09, #02733f);
+}
+
+.BGW {
+    color: #fff;
+    background: linear-gradient(#f9faf4, #140a09, #02733f);
+}
+
 .BG {
     color: #fff;
     background: linear-gradient(#140a09, #02733f);
 }
 
-.WU {
+.UW {
     background: linear-gradient(#f9faf4, #0e67ab);
 }
 
@@ -124,24 +148,37 @@
     background: linear-gradient(#d31d29, #f9faf4);
 }
 
-.UB {
+.BU {
     color: #f9faf4;
     background: linear-gradient(#0e67ab, #140a09);
 }
 
-.RG {
+.GR {
     background: linear-gradient(#d31d29, #02733f);
 }
 
-.UR {
+.RU {
     background: linear-gradient(#0e67ab, #d31d29);
 }
 
-.WB {
+.BW {
     background: linear-gradient(#f9faf4, #140a09);
 }
 
 .BR {
     color: #f9faf4;
     background: linear-gradient(#140a09, #0e67ab);
+}
+
+.loading {
+    text-align: center;
+    color: #fbbcee;
+}
+
+@media (max-width: 600px) {
+    .single-card-description,
+    .update-add-wrapper {
+        min-width: 100vw;
+        max-width: 100vw;
+    }
 }
