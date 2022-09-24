@@ -21,7 +21,7 @@ const findCardsByName = async (name) => {
             const errMsg = await response.json();
             throw new Error(errMsg);
         } else {
-            const data = await response.json();
+            const { data } = await response.json();
             return data;
         }
 
@@ -37,7 +37,7 @@ const findCardsById = async (magicApiId) => {
             const errMsg = await response.json();
             throw new Error(errMsg);
         } else {
-            const data = await response.json();
+            const { data } = await response.json();
             return data;
         }
 
