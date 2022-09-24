@@ -27,7 +27,7 @@ function AllCards({ handleNewCardSearch, cards, showCardInfo, error, status }) {
     <main>
       {!cards.length && !error ? <h2>{status}</h2> : null}
       {error && <h2>{error}</h2>}
-      <section className="all-cards-wrapper">{singleCards}</section>
+      <section className="all-cards">{singleCards}</section>
     </main>
   );
 }

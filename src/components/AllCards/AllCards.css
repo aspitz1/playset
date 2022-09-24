@@ -1,6 +1,12 @@
-.all-cards-wrapper {
+main {
+    background-color: #2B2749;
+}
+
+.all-cards {
+    padding: 20px 0;
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     grid-gap: 20px;
+    justify-content: center;
 }
     

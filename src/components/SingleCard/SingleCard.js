@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import { UpdateBtn } from '../buttons/miscButtons';
-
 import './SingleCard.css';
 
 function SingleCard({ card }) {
@@ -10,14 +8,8 @@ function SingleCard({ card }) {
         <div className='card-wrapper'>
             <Link to={`/card/${magicApiId}`} className='card-btn'>
                 <img className='card-img' src={imageUrl} alt={name} id={id} />
-                {amount && <p>Amount: {amount}</p>}
+                {amount && <p className='amount'>Amount: {amount}</p>}
             </Link>
-            {
-                id &&
-                <Link to={`/card/${magicApiId}`}>
-                    <UpdateBtn /> 
-                </Link>
-            }
         </div>
     )
 }
