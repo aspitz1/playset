@@ -1,5 +1,7 @@
 import Navbar from '../Navbar/Navbar';
 
+import './Header.css'
+
 function Header({ buttonText, setError, collection, setFilterCredentials, setFilteredCards, filterCredentials}) {
     return (
         <header>

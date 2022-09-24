@@ -1,3 +1,5 @@
+import './buttons.css';
+
 function NavButton({ buttonText, setError }) {
     return (
         <button 

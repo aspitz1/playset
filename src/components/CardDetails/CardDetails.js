@@ -34,37 +34,42 @@ function CardDetails({ showCardInfo, selectedCard, error, handleAddCardToCollect
         )
     });
 
+    const colors = colorIdentity ? colorIdentity.join('') : colorIdentity;
+
     return (
       <main>
         {!name ? (
-          <h2>Loading...</h2>
+          <h2 className='loading'>Loading...</h2>
         ) : (
-          <div>
-            <h2>
-              {name} <span>{colorIdentity}</span>
-            </h2>
-            <figure>
-              <img className="card-details-img" src={imageUrl} alt={name} />
-              <figcaption>{artist}</figcaption>
-            </figure>
-            <article>
-              <p>Type: {type}</p>
-              <p>Mana Cost: {manaCost || "none"}</p>
-              <p>Rarity: {rarity}</p>
-              <p>Set Name: {setName}</p>
+          <div className="single-card-wrapper">
+            <article className='single-card-description'>
+              <h2 className="name">
+                {name}{" "}
+                <span className={colors + " color-identity"}>
+                  {colors}
+                </span>
+              </h2>
+              <figure className='card-details-fig'>
+                <img className="card-details-img" src={imageUrl} alt={name} />
+                <figcaption className='artist'>{artist}</figcaption>
+              </figure>
+              <p className="type">Type: {type}</p>
+              <p className="mana-cost">Mana Cost: {manaCost || "none"}</p>
+              <p className="rarity">Rarity: {rarity}</p>
+              <p className="set-name">Set Name: {setName}</p>
               <p className="card-text">{text}</p>
-              <ul>{legalitiesList}</ul>
+              <ul className="legalities-list">{legalitiesList}</ul>
             </article>
-            <section>
-              {error ? <p>{error}</p> : null}
-              {updateMsg ? <p>{updateMsg}</p> : null}
+            <section className='update-add-wrapper'>
               {!inCollection && name ? (
                 <AddNewCard
+                  error={error}
                   handleAddCardToCollection={handleAddCardToCollection}
                 />
               ) : (
                 <UpdateCard
                   amount={amount}
+                  updateMsg={updateMsg}
                   handleUpdateCardInCollection={handleUpdateCardInCollection}
                   handleDeleteCardFromCollection={
                     handleDeleteCardFromCollection

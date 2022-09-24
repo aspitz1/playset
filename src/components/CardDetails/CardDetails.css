@@ -1,3 +1,184 @@
+.single-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.single-card-description,
+.update-add-wrapper {
+    min-width: 800px;
+    max-width: 800px;
+}
+
+.name {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #957FEF;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card-details-fig {
+    margin: 0;
+    padding: 7px 0;
+}
+
+.card-details-img {
+    padding: 2px;
+    background-color: #fbbcee;
+    border-radius: 10px;
+}
+
+.artist {
+    font-family: 'Comfortaa', sans-serif;
+    padding: 3px 0;
+    color: #FBF1F2;
+}
+
+.type {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.type,
+.rarity {
+    background-color: #fbbcee;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid #2B2749;
+}
+
+.mana-cost,
+.set-name {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #FBF1F2;
+    border-bottom: 1px solid #2B2749;
+}
+
 .card-text {
+    margin: 0;
     white-space: pre-line;
+    padding: 10px 0 10px 40px;
+    text-align: left;
+    background-color: #fbbcee;
+    border-bottom: 1px solid #2B2749;
+}
+
+.legalities-list {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+}
+
+.legalities-list>li {
+    padding: 7px 0 3px 40px;
+}
+
+.legalities-list>li:nth-child(odd) {
+    background-color: #957FEF;
+}
+
+.legalities-list>li:nth-child(even) {
+    background-color: #ac9af0;
+}
+
+.color-identity {
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.W {
+    background-color: #f9faf4;
+}
+
+.U {
+    background-color: #0e67ab;
+}
+
+.B {
+    color: #f9faf4;
+    background-color: #140a09;
+}
+
+.R {
+    background-color: #d31d29;
+}
+
+.G {
+    color: #f9faf4;
+    background-color: #02733f;
+}
+
+.GU {
+    background: linear-gradient(#0e67ab, #02733f);
+}
+
+.GW {
+    background: linear-gradient(#f9faf4, #02733f);
+}
+
+.GUW {
+    background: linear-gradient(#f9faf4, #0e67ab, #02733f);
+}
+
+.BGR {
+    color: #fff;
+    background: linear-gradient(#d31d29, #140a09, #02733f);
+}
+
+.BGW {
+    color: #fff;
+    background: linear-gradient(#f9faf4, #140a09, #02733f);
+}
+
+.BG {
+    color: #fff;
+    background: linear-gradient(#140a09, #02733f);
+}
+
+.UW {
+    background: linear-gradient(#f9faf4, #0e67ab);
+}
+
+.RW {
+    background: linear-gradient(#d31d29, #f9faf4);
+}
+
+.BU {
+    color: #f9faf4;
+    background: linear-gradient(#0e67ab, #140a09);
+}
+
+.GR {
+    background: linear-gradient(#d31d29, #02733f);
+}
+
+.RU {
+    background: linear-gradient(#0e67ab, #d31d29);
+}
+
+.BW {
+    background: linear-gradient(#f9faf4, #140a09);
+}
+
+.BR {
+    color: #f9faf4;
+    background: linear-gradient(#140a09, #0e67ab);
+}
+
+.loading {
+    text-align: center;
+    color: #fbbcee;
+}
+
+@media (max-width: 600px) {
+    .single-card-description,
+    .update-add-wrapper {
+        min-width: 100vw;
+        max-width: 100vw;
+    }
 }

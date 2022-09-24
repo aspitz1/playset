@@ -33,6 +33,7 @@ function App() {
     }, []);
     
     const handleNewCardSearch = (cardName) => {
+        setError('');
         setSearchResults([]);
         findCardsByName(cardName)
             .then(data => {
@@ -132,7 +133,7 @@ function App() {
                 .then(data => {
                     setSelectedCard({ 
                         ...data, 
-                        inCollection: true,
+                        inCollection: card ? true : false,
                         amount: card ? card.amount : 0
                     });
                     setError('');
