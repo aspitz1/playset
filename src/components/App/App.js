@@ -22,7 +22,7 @@ function App() {
     const [filterCredentials, setFilterCredentials] = useState('');
     const [filteredCards, setFilteredCards] = useState([]);
     const [error, setError] = useState('');
-    const [deleteMsg, setDeleteMsg] = useState('');
+    const [updateMsg, setUpdateMsg] = useState('');
 
     useEffect(() => {
         getCollection()
@@ -86,9 +86,36 @@ function App() {
 
             setSelectedCard(updatedSelectedCard);
             setCollection(updatedCards);
+            setUpdateMsg(`You now have ${newAmount} of ${updatedSelectedCard.name}.`);
+            setTimeout(() => {
+              setUpdateMsg('');
+            }, 5000);
         })
         .catch(err => setError(err.message));
     }
+
+    const handleDeleteCardFromCollection = () => {
+      const card = collection.find(
+        (card) => card.magicApiId === selectedCard.magicApiId
+      );
+      deleteCardFromCollection(card.id)
+        .then((data) => {
+          const updatedCollection = collection.filter(
+            (collectionCards) => card.id !== collectionCards.id
+          );
+          setSelectedCard({
+            ...selectedCard,
+            inCollection: false,
+          });
+
+          setCollection(updatedCollection);
+          setUpdateMsg(data.message);
+          setTimeout(() => {
+            setUpdateMsg('');
+          }, 5000);
+        })
+        .catch((err) => setError(err.message));
+    };
 
     const showCardInfo = (magicApiId) => {
         setSelectedCard({});
@@ -112,25 +139,6 @@ function App() {
                 })
                 .catch(err => setError(err.message));
         }
-    }
-
-    const handleDeleteCardFromCollection = () => {
-        const card = collection.find(card => card.magicApiId === selectedCard.magicApiId); 
-        deleteCardFromCollection(card.id)
-            .then(data => {
-                const updatedCollection = collection.filter(collectionCards => card.id !== collectionCards.id);
-                setSelectedCard({
-                    ...selectedCard,
-                    inCollection: false
-                });
-                
-                setCollection(updatedCollection);
-                setDeleteMsg(data.message);
-                setTimeout(() => {
-                    setDeleteMsg('');
-                }, 5000);
-            })
-            .catch(err => setError(err.message));
     }
 
     return (
@@ -195,7 +203,7 @@ function App() {
                 handleDeleteCardFromCollection={handleDeleteCardFromCollection}
                 showCardInfo={showCardInfo}
                 error={error}
-                deleteMsg={deleteMsg}
+                updateMsg={updateMsg}
               />
             </div>
           }

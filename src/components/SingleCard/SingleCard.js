@@ -4,7 +4,7 @@ import { UpdateBtn } from '../buttons/miscButtons';
 
 import './SingleCard.css';
 
-function SingleCard({ card, showCardInfo }) {
+function SingleCard({ card }) {
     const { imageUrl, id, amount, name, magicApiId } = card;
     return (
         <div>
