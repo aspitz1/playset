@@ -1,9 +1,18 @@
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
+
 import AddNewCard from '../AddNewCard/AddNewCard';
 import UpdateCard from '../UpdateCard/UpdateCard';
 
 import './CardDetails.css';
 
-function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection, handleDeleteCardFromCollection, deleteMsg }) {
+function CardDetails({ showCardInfo, selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection, handleDeleteCardFromCollection, deleteMsg }) {
+    const { magicApiId } = useParams();
+
+    useEffect(() => {
+        showCardInfo(magicApiId)
+    }, [])
+
     const { 
         name,
         manaCost,

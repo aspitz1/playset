@@ -8,19 +8,16 @@ function SingleCard({ card, showCardInfo }) {
     const { imageUrl, id, amount, name, magicApiId } = card;
     return (
         <div>
-            <Link 
-                to={`/card/${magicApiId}`} 
-                className='card-btn' 
-                onClick={() => showCardInfo(magicApiId)}
-            >
+            <Link to={`/card/${magicApiId}`} className='card-btn'>
                 <img className='card-img' src={imageUrl} alt={name} id={id} />
-                {amount ? 
-                        <p>Amount: {amount}</p>
-                : null}
+                {amount && <p>Amount: {amount}</p>}
             </Link>
-            <Link to={'/card/:magicApiId'} onClick={() => showCardInfo(magicApiId)}>
-                {id ? <UpdateBtn /> : null}
-            </Link>
+            {
+                id &&
+                <Link to={`/card/${magicApiId}`}>
+                    <UpdateBtn /> 
+                </Link>
+            }
         </div>
     )
 }

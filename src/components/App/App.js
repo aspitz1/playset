@@ -177,6 +177,7 @@ function App() {
                             handleAddCardToCollection={handleAddCardToCollection}
                             handleUpdateCardInCollection={handleUpdateCardInCollection}
                             handleDeleteCardFromCollection={handleDeleteCardFromCollection}
+                            showCardInfo={showCardInfo}
                             error={error} 
                             deleteMsg={deleteMsg}
                         />
