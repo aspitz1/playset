@@ -12,7 +12,7 @@
 @media (max-width: 600px) {
     .search-collection-input { 
         margin-right: 0;
-        padding: 8px 10px;
-        font-size: 1em;
+        padding: 8px 2px;
+        font-size: .7em;
     }
 }
