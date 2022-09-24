@@ -1,0 +1,10 @@
+.search-collection-input {
+    font-size: 1.1em;
+    color: #2B2749; 
+    text-align: center;
+    padding: 8px 20px;
+    margin-right: 90px;
+    border: 1.5px solid #2B2749;
+    border-radius: 20px;
+    background-color: #FBF1F2;
+}

@@ -1,15 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import NavButton from '../buttons/NavButton';
 import SearchCollection from '../SearchCollection/SearchCollection';
 
 import { makeUpperCase } from '../../utilityFunctions/utilityFunctions';
 
+import './Navbar.css';
+
 function Navbar({ buttonText, setError, collection, setFilterCredentials, setFilteredCards, filterCredentials }) {
+    const location = useLocation();
+    
     return (
-        <nav className='navBar'>
+        <nav>
             <Link to='/findNewCard'>
-                <NavButton buttonText={'Find New Card'} setError={setError} />
+                {location.pathname !== '/findNewCard' && <NavButton buttonText={'Find New Card'} setError={setError} />}
             </Link>
             <Link to={( buttonText === 'home' ) ? '/' : null }>
                 {buttonText === 'home' ? 

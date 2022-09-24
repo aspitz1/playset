@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './SearchCollection.css';
+
 function SearchCollection({ collection, setFilterCredentials, setFilteredCards, filterCredentials }) {
     const handleChange = (e) => {
         setFilterCredentials(e.target.value.toLowerCase());
@@ -11,6 +13,7 @@ function SearchCollection({ collection, setFilterCredentials, setFilteredCards, 
         <section>
             <form onSubmit={(e) => e.preventDefault()}>
                 <input 
+                    className='search-collection-input'
                     type='text' 
                     value={filterCredentials}  
                     placeholder='Search Collection'
