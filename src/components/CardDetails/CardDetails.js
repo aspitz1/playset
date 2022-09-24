@@ -1,9 +1,18 @@
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
+
 import AddNewCard from '../AddNewCard/AddNewCard';
 import UpdateCard from '../UpdateCard/UpdateCard';
 
 import './CardDetails.css';
 
-function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection, handleDeleteCardFromCollection, deleteMsg }) {
+function CardDetails({ showCardInfo, selectedCard, error, handleAddCardToCollection, handleUpdateCardInCollection, handleDeleteCardFromCollection, deleteMsg }) {
+    const { magicApiId } = useParams();
+
+    useEffect(() => {
+        showCardInfo(magicApiId)
+    }, [])
+
     const { 
         name,
         manaCost,
@@ -19,15 +28,15 @@ function CardDetails({ selectedCard, error, handleAddCardToCollection, handleUpd
         amount
     } = selectedCard;
 
-    const legalitiesList = legalities ? legalities.map((legality, i) => {
+    const legalitiesList = legalities && legalities.map((legality, i) => {
         return (
             <li key={i}>{legality.format}: {legality.legality}</li>
         )
-    }) : null;
+    });
 
     return (
         <main>
-            {!name ? <h2>Loading...</h2>: 
+            {!name ? <h2>Loading...</h2> : 
             <div>
                 <h2>{name} <span>{colorIdentity}</span></h2>
                 <figure>
