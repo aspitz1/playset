@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import './UpdateCard.css';
+
 function UpdateCard({ amount, handleUpdateCardInCollection, handleDeleteCardFromCollection }) {
     const [newAmount, setNewAmount] = useState(amount);
 
@@ -14,11 +16,12 @@ function UpdateCard({ amount, handleUpdateCardInCollection, handleDeleteCardFrom
     }
 
     return (
-        <div>
+        <div className='update-card-wrapper'>
             <form onSubmit={(e) => handleUpdateSubmit(e)} >
-                <label>
+                <label className='update-label'>
                     Update Amount:
                     <input 
+                        className='input-number'
                         type='number' 
                         min='1'
                         max='40'
@@ -26,9 +29,9 @@ function UpdateCard({ amount, handleUpdateCardInCollection, handleDeleteCardFrom
                         onChange={(e) => setNewAmount(e.target.value)}
                     />
                 </label>
-                <button type='submit' disabled={newAmount == amount}>UPDATE</button>
+                <button className='update-btn' type='submit' disabled={newAmount == amount}>UPDATE</button>
             </form>
-            <button disabled={false} onClick={(e) => handleDelete(e)}>DELETE</button>
+            <button className='delete-btn' disabled={false} onClick={(e) => handleDelete(e)}>DELETE</button>
         </div>
     )
 }

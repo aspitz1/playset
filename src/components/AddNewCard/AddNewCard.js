@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import './AddNewCard.css';
+
 function AddNewCard({ handleAddCardToCollection }) {
     const [numOfCards, setNumOfCards] = useState(0);
 

@@ -33,6 +33,7 @@ function App() {
     }, []);
     
     const handleNewCardSearch = (cardName) => {
+        setError('');
         setSearchResults([]);
         findCardsByName(cardName)
             .then(data => {
