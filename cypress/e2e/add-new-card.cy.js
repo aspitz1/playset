@@ -2,7 +2,7 @@ import cards from "../fixtures/collection.json";
 import data from "../fixtures/cards.json";
 import card from "../fixtures/post-res.json";
 
-describe("Search collection", () => {
+describe("Add new card", () => {
   beforeEach(() => {
     cy.intercept("https://playset-api.onrender.com/api/cards", cards)
       .visit("http://localhost:3000/");
