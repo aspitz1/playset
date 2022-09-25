@@ -12,24 +12,24 @@
   justify-content: center;
   align-items: center;
   background-color: #fbbcee;
-  height: 30vh;
+  height: 200px;
   min-width: 800px;
   max-width: 800px;
-  border-radius: 50px;
+  border-radius: 3px;
 }
 
 .find-new-card-input {
-  margin-bottom: 10px;
-  padding: 20px 40px;
-  font-size: 1.5em;
+  margin-bottom: 15px;
+  padding: 10px 40px;
+  font-size: 1.1em;
   text-align: center;
-  border-radius: 40px;
+  border-radius: 3px;
   border: 1px solid #2b2749;
 }
 
 .find-new-card-btn {
-  padding: 15px 40px;
-  border-radius: 40px;
+  padding: 10px 40px;
+  border-radius: 3px;
   border: 1px solid #2b2749;
   background: #7161ef;
   cursor: pointer;

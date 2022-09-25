@@ -9,7 +9,7 @@
 }
 
 .update-label {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .input-number {
@@ -20,7 +20,7 @@
   color: #2b2749;
   background: #fbf1f2;
   border: 1.5px solid #2b2749;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 .update-btn {
@@ -29,7 +29,7 @@
   color: #2b2749;
   font-size: 1.2em;
   border: 1.5px solid #2b2749;
-  border-radius: 20px;
+  border-radius: 3px;
   cursor: pointer;
   background: #ac9af0;
   transition: all 0.15s ease-out;
@@ -48,15 +48,17 @@
 
 .delete-btn {
   margin-left: 60px;
-  padding: 4px 9px;
-  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 1.2em;
+  border-radius: 3px;
   border: 1.5px solid #2b2749;
   background: #d74ca0;
   transition: all 0.15s ease-out;
 }
 
 .delete-btn:hover {
-  background: #eb1321;
+  background: #940b14;
+  color: #FBF1F2;
   cursor: pointer;
 }
 
@@ -68,4 +70,29 @@
 .update {
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .update-card-wrapper {
+    flex-direction: column;
+  }
+
+  .update-label {
+    font-size: 1em;
+  }
+
+  .input-number {
+    font-size: 1em;
+    margin-bottom: 14px;
+  }
+
+  .update-btn {
+    font-size: 1em;
+  }
+
+  .delete-btn {
+    font-size: 1em;
+    margin-left: 55px;
+    align-self: flex-start;
+  }
 }

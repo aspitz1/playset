@@ -15,14 +15,13 @@
   font-family: "Comfortaa", sans-serif;
   margin: 0;
   padding: 20px 0;
-  background-color: #957fef;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  background-color: #FBF1F2;
+  border-bottom: 2px solid #7161EF;
 }
 
 .card-details-fig {
   margin: 0;
-  padding: 7px 0;
+  padding: 14px 0;
 }
 
 .card-details-img {
@@ -38,8 +37,7 @@
 }
 
 .type {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top: 2px solid #7161EF;
 }
 
 .type,
@@ -154,10 +152,12 @@
 }
 
 .GR {
+  color: #fff;
   background: linear-gradient(#d31d29, #02733f);
 }
 
 .RU {
+  color: #fff;
   background: linear-gradient(#0e67ab, #d31d29);
 }
 
