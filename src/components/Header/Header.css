@@ -12,5 +12,5 @@ h1 {
   margin: 0;
   padding: 13px 0 10px 20px;
   color: #fbf1f2;
-  filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(4px 1px 0 #2B2749);
 }

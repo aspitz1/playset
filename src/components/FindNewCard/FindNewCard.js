@@ -10,7 +10,7 @@ function FindNewCard({ handleNewCardSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setCardName("");
-    navigate(`/${cardName}`);
+    navigate(`/search/${cardName}`);
   };
 
   return (

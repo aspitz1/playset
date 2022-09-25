@@ -4,8 +4,12 @@
   align-items: center;
   text-align: center;
   width: 200px;
-  border-radius: 10px;
-  background-color: #433d72;
+  padding: 1px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #fbbcee;
 }
 
 .card-btn,
@@ -20,11 +24,7 @@
 
 .amount {
   font-size: 1.2em;
-  padding: 4px 0;
-  background-color: #433d72;
-  color: #fbbcee;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  color: #2B2749;
 }
 
 .card-img {
@@ -35,6 +35,21 @@
 }
 
 .card-img:hover {
-  filter: drop-shadow(0 2px 2px #2b2749);
+  filter: drop-shadow(0 0 3px #000);
   transform: scale(1.03);
+}
+
+@media (max-width: 414px) {
+  .card-img {
+    width: 75vw;
+    border-radius: 14px;
+  }
+
+  .card-wrapper {
+    background: none;
+  }
+
+  .amount {
+    color: #fbbcee;
+  }
 }

@@ -1,0 +1,15 @@
+.oops,
+.not-found-msg {
+    text-align: center;
+}
+
+.oops {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.7em;
+    color: #fbf1f2;
+}
+
+.not-found-msg {
+    font-size: 1.3em;
+    color: #fbbcee;
+}
