@@ -209,6 +209,7 @@ function App() {
             <Header buttonText={"home"} setError={setError} />
             <CardDetails
               selectedCard={selectedCard}
+              collection={collection}
               handleAddCardToCollection={handleAddCardToCollection}
               handleUpdateCardInCollection={handleUpdateCardInCollection}
               handleDeleteCardFromCollection={handleDeleteCardFromCollection}
