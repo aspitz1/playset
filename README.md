@@ -38,10 +38,10 @@ To run tests:
 ## Usage
 Playset is currently a demo. Once multiple users are enabled, use Playset to track your Magic collection. Playset uses [Magic: The Gathering Developers API](https://docs.magicthegathering.io/) for all card data.
 ## Roadmap
-* Add multi user support through user accounts and authentication
-* Organize collection by color
-* Allow user to make multiple named collections
-* Advanced searching
+- [ ] Add multi user support through user accounts and authentication
+- [ ] Organize collection by color
+- [ ] Allow user to make multiple named collections
+- [ ] Advanced searching
 
 ## Contributors
 * [Anna Spitz](https://github.com/aspitz1)
