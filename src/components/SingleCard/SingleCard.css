@@ -45,8 +45,10 @@
     border-radius: 14px;
   }
 
-  .card-wrapper {
+  .card-wrapper,
+  .search-card-wrapper {
     background: none;
+    width: 75vw;
   }
 
   .amount {
