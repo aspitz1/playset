@@ -9,6 +9,7 @@ import "./CardDetails.css";
 function CardDetails({
   showCardInfo,
   selectedCard,
+  collection,
   error,
   handleAddCardToCollection,
   handleUpdateCardInCollection,
@@ -18,8 +19,10 @@ function CardDetails({
   const { magicApiId } = useParams();
 
   useEffect(() => {
-    showCardInfo(magicApiId);
-  }, []);
+    if(collection) {
+      showCardInfo(magicApiId);
+    }
+  }, [collection]);
 
   const {
     name,

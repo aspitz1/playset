@@ -133,6 +133,11 @@
   background: linear-gradient(#f9faf4, #140a09, #02733f);
 }
 
+.GRW {
+  color: #fff;
+  background: linear-gradient(#d31d29, #140a09, #02733f);
+}
+
 .BG {
   color: #fff;
   background: linear-gradient(#140a09, #02733f);
