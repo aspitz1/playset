@@ -5,6 +5,7 @@ import Header from "../Header/Header";
 import AllCards from "../AllCards/AllCards";
 import FindNewCard from "../FindNewCard/FindNewCard";
 import CardDetails from "../CardDetails/CardDetails";
+import PageNotFound from "../PageNotFound/PageNotFound";
 
 import {
   getCollection,
@@ -187,7 +188,7 @@ function App() {
         }
       />
       <Route
-        path="/:cardName"
+        path="/search/:cardName"
         element={
           <div>
             <Header buttonText={"home"} setError={setError} />
@@ -218,6 +219,12 @@ function App() {
           </div>
         }
       />
+      <Route path='*' element={ 
+        <div>
+          <Header buttonText={"home"} setError={setError} />
+          <PageNotFound /> 
+        </div>
+      } />
     </Routes>
   );
 }
