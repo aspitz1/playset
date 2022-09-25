@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "name": "Thoughtseize",
+      "manaCost": "{B}",
+      "colorIdentity": ["B"],
+      "type": "Sorcery",
+      "rarity": "Rare",
+      "setName": "Double Masters",
+      "text": "Target player reveals their hand. You choose a nonland card from it. That player discards that card. You lose 2 life.",
+      "artist": "Aleksi Briclot",
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489782&type=card",
+      "legalities": [
+        {
+          "format": "Commander",
+          "legality": "Legal"
+        },
+        {
+          "format": "Duel",
+          "legality": "Legal"
+        },
+        {
+          "format": "Explorer",
+          "legality": "Legal"
+        },
+        {
+          "format": "Gladiator",
+          "legality": "Legal"
+        },
+        {
+          "format": "Historic",
+          "legality": "Legal"
+        },
+        {
+          "format": "Historicbrawl",
+          "legality": "Legal"
+        },
+        {
+          "format": "Legacy",
+          "legality": "Legal"
+        },
+        {
+          "format": "Modern",
+          "legality": "Legal"
+        },
+        {
+          "format": "Pioneer",
+          "legality": "Legal"
+        },
+        {
+          "format": "Vintage",
+          "legality": "Legal"
+        }
+      ],
+      "magicApiId": "8e8097bd-ccd9-5f97-b9c2-0c8ee324accc"
+    }
+  ]
+}

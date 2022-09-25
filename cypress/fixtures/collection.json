@@ -1,0 +1,24 @@
+{
+  "cards": [
+    {
+      "id": "f7c6b8cb-14b7-4b70-b1b6-de70a445648c",
+      "name": "Gaea's Cradle",
+      "magicApiId": "aca602fa-8308-5f6f-8f45-9367ffcdc4d8",
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=10422&type=card",
+      "amount": 4,
+      "collections": ["main"],
+      "createdAt": "2022-09-23T22:00:31.632Z",
+      "updatedAt": "2022-09-23T22:00:31.632Z"
+    },
+    {
+      "id": "fe2b50c8-6bc7-4ad9-a6a0-7a20a6aade3b",
+      "name": "Verdant Catacombs",
+      "magicApiId": "a0e2d24e-d722-5646-bd47-875937f1afb5",
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=525621&type=card",
+      "amount": 2,
+      "collections": ["main"],
+      "createdAt": "2022-09-23T22:01:20.165Z",
+      "updatedAt": "2022-09-23T22:01:20.165Z"
+    }
+  ]
+}

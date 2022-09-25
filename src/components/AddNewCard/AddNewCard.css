@@ -1,46 +1,46 @@
 .add-new-card-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0;
-    background-color: #7161EF;
-    border-top: 1px solid #2B2749;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  background-color: #7161ef;
+  border-top: 1px solid #2b2749;
+  width: 100%;
 }
 
 .add-card-input {
-    margin-left: 2px;
-    padding: 4px;
-    text-align: center;
-    font-size: 1.2em;
-    color: #2B2749;
-    background: #FBF1F2;
-    border: 1.5px solid #2B2749;
-    border-radius: 10px;
+  margin-left: 2px;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #2b2749;
+  background: #fbf1f2;
+  border: 1.5px solid #2b2749;
+  border-radius: 10px;
 }
 
 .add-card-btn {
-    margin-left: 5px;
-    padding: 6px 10px;
-    color: #2B2749;
-    font-size: 1.2em;
-    border: 1.5px solid #2B2749;
-    border-radius: 20px;
-    cursor: pointer;
-    background: #ac9af0;
+  margin-left: 5px;
+  padding: 6px 10px;
+  color: #2b2749;
+  font-size: 1.2em;
+  border: 1.5px solid #2b2749;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #ac9af0;
 }
 
 .add-card-btn:hover {
-    background: #fbbcee;
+  background: #fbbcee;
 }
 
 .add-card-btn:disabled {
-    cursor: not-allowed;
-    background: none;
-    color: #3c3578;
-    border: 1.5px solid #3c3578;
+  cursor: not-allowed;
+  background: none;
+  color: #3c3578;
+  border: 1.5px solid #3c3578;
 }
 
 .error {
-    color: red;
+  color: red;
 }

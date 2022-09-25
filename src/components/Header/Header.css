@@ -1,15 +1,15 @@
 header {
-    position: sticky;
-    top: 0;
-    background-color: #7161EF;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  background-color: #7161ef;
+  z-index: 1;
 }
 
 h1 {
-    font-family: 'Comfortaa', sans-serif;
-    font-size: 3em;
-    margin: 0;
-    padding: 13px 0 10px 20px;
-    color: #FBF1F2;
-    filter: drop-shadow(1px 1px 1px black);
+  font-family: "Comfortaa", sans-serif;
+  font-size: 3em;
+  margin: 0;
+  padding: 13px 0 10px 20px;
+  color: #fbf1f2;
+  filter: drop-shadow(1px 1px 1px black);
 }

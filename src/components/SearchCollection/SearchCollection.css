@@ -1,18 +1,18 @@
 .search-collection-input {
-    font-size: 1.1em;
-    color: #2B2749; 
-    text-align: center;
-    padding: 8px 20px;
-    margin-right: 90px;
-    border: 1.5px solid #2B2749;
-    border-radius: 20px;
-    background-color: #FBF1F2;
+  font-size: 1.1em;
+  color: #2b2749;
+  text-align: center;
+  padding: 8px 20px;
+  margin-right: 90px;
+  border: 1.5px solid #2b2749;
+  border-radius: 20px;
+  background-color: #fbf1f2;
 }
 
 @media (max-width: 600px) {
-    .search-collection-input { 
-        margin-right: 0;
-        padding: 8px 2px;
-        font-size: .7em;
-    }
+  .search-collection-input {
+    margin-right: 0;
+    padding: 8px 2px;
+    font-size: 0.7em;
+  }
 }

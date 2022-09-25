@@ -1,23 +1,23 @@
 .navButton {
-    font-size: 1.1em;
-    color: #2B2749;
-    padding: 8px 20px;
-    margin-right: 90px;
-    border: 1.5px solid #2B2749;
-    border-radius: 20px;
-    background-color: #ac9af0;
-    cursor: pointer;
-    transition: all .15s ease-out;
+  font-size: 1.1em;
+  color: #2b2749;
+  padding: 8px 20px;
+  margin-right: 90px;
+  border: 1.5px solid #2b2749;
+  border-radius: 20px;
+  background-color: #ac9af0;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
 }
 
 .navButton:hover {
-    background-color: #fbbcee;
+  background-color: #fbbcee;
 }
 
 @media (max-width: 600px) {
-    .navButton {
-        margin-right: 10px;
-        padding: 8px 10px;
-        font-size: .8em;
-    }
+  .navButton {
+    margin-right: 10px;
+    padding: 8px 10px;
+    font-size: 0.8em;
+  }
 }

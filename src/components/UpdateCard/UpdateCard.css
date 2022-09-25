@@ -1,71 +1,71 @@
 .update-card-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 20px 0;
-    background-color: #7161EF;
-    border-top: 1px solid #2B2749;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #7161ef;
+  border-top: 1px solid #2b2749;
 }
 
 .update-label {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .input-number {
-    margin-left: 2px;
-    padding: 4px;
-    text-align: center;
-    font-size: 1.2em;
-    color: #2B2749;
-    background: #FBF1F2;
-    border: 1.5px solid #2B2749;
-    border-radius: 10px;
+  margin-left: 2px;
+  padding: 4px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #2b2749;
+  background: #fbf1f2;
+  border: 1.5px solid #2b2749;
+  border-radius: 10px;
 }
 
 .update-btn {
-    margin-left: 5px;
-    padding: 6px 10px;
-    color: #2B2749;
-    font-size: 1.2em;
-    border: 1.5px solid #2B2749;
-    border-radius: 20px;
-    cursor: pointer;
-    background: #ac9af0;
-    transition: all .15s ease-out;
+  margin-left: 5px;
+  padding: 6px 10px;
+  color: #2b2749;
+  font-size: 1.2em;
+  border: 1.5px solid #2b2749;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #ac9af0;
+  transition: all 0.15s ease-out;
 }
 
 .update-btn:hover {
-    background: #fbbcee;
+  background: #fbbcee;
 }
 
 .update-btn:disabled {
-    cursor: not-allowed;
-    background: none;
-    color: #3c3578;
-    border: 1.5px solid #3c3578;
+  cursor: not-allowed;
+  background: none;
+  color: #3c3578;
+  border: 1.5px solid #3c3578;
 }
 
 .delete-btn {
-    margin-left: 60px;
-    padding: 4px 9px;
-    border-radius: 20px;
-    border: 1.5px solid #2B2749;
-    background: #d74ca0;
-    transition: all .15s ease-out;
+  margin-left: 60px;
+  padding: 4px 9px;
+  border-radius: 20px;
+  border: 1.5px solid #2b2749;
+  background: #d74ca0;
+  transition: all 0.15s ease-out;
 }
 
 .delete-btn:hover {
-    background: #eb1321;
-    cursor: pointer;
+  background: #eb1321;
+  cursor: pointer;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .error,
 .update {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
