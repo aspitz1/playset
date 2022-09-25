@@ -1,0 +1,12 @@
+{
+  "card": {
+    "createdAt": "2022-09-25T02:17:00.512Z",
+    "updatedAt": "2022-09-25T02:17:00.512Z",
+    "id": "a21d2bd6-3e1c-4440-8799-19f72bc145b6",
+    "collections": ["main"],
+    "name": "Thoughtseize",
+    "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=489782&type=card",
+    "magicApiId": "8e8097bd-ccd9-5f97-b9c2-0c8ee324accc",
+    "amount": 2
+  }
+}

@@ -3,6 +3,7 @@ header {
   top: 0;
   background-color: #7161ef;
   z-index: 1;
+  width: 100vw;
 }
 
 h1 {

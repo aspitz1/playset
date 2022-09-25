@@ -19,6 +19,16 @@
       "collections": ["main"],
       "createdAt": "2022-09-23T22:01:20.165Z",
       "updatedAt": "2022-09-23T22:01:20.165Z"
+    },
+    {
+      "id": "f16b85ce-8dff-4c74-979e-7404890ee090",
+      "name": "Heritage Druid",
+      "magicApiId": "29e52eb1-f699-58c8-a782-003450e32bd9",
+      "imageUrl": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=413713&type=card",
+      "amount": 1,
+      "collections": ["main"],
+      "createdAt": "2022-09-23T22:04:04.888Z",
+      "updatedAt": "2022-09-23T22:04:04.888Z"
     }
   ]
 }
