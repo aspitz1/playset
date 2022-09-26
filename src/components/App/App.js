@@ -6,6 +6,9 @@ import AllCards from "../AllCards/AllCards";
 import FindNewCard from "../FindNewCard/FindNewCard";
 import CardDetails from "../CardDetails/CardDetails";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import Footer from "../Footer/Footer";
+
+import './App.css';
 
 import {
   getCollection,
@@ -157,7 +160,7 @@ function App() {
       <Route
         path="/"
         element={
-          <div>
+          <div className="page-container">
             <Header
               buttonText={"search collection"}
               collection={collection}
@@ -175,22 +178,24 @@ function App() {
               showCardInfo={showCardInfo}
               handleNewCardSearch={null}
             />
+            <Footer />
           </div>
         }
       />
       <Route
         path="/findNewCard"
         element={
-          <div>
+          <div className="page-container">
             <Header buttonText={"home"} setError={setError} />
             <FindNewCard handleNewCardSearch={handleNewCardSearch} />
+            <Footer />
           </div>
         }
       />
       <Route
         path="/search/:cardName"
         element={
-          <div>
+          <div className="page-container">
             <Header buttonText={"home"} setError={setError} />
             <AllCards
               cards={searchResults}
@@ -199,13 +204,14 @@ function App() {
               handleNewCardSearch={handleNewCardSearch}
               showCardInfo={showCardInfo}
             />
+            <Footer />
           </div>
         }
       />
       <Route
         path="/card/:magicApiId"
         element={
-          <div>
+          <div className="page-container">
             <Header buttonText={"home"} setError={setError} />
             <CardDetails
               selectedCard={selectedCard}
@@ -217,15 +223,20 @@ function App() {
               error={error}
               updateMsg={updateMsg}
             />
+            <Footer />
           </div>
         }
       />
-      <Route path='*' element={ 
-        <div>
-          <Header buttonText={"home"} setError={setError} />
-          <PageNotFound /> 
-        </div>
-      } />
+      <Route
+        path="*"
+        element={
+          <div className="page-container">
+            <Header buttonText={"home"} setError={setError} />
+            <PageNotFound />
+            <Footer />
+          </div>
+        }
+      />
     </Routes>
   );
 }
