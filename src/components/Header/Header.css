@@ -3,7 +3,7 @@ header {
   top: 0;
   background-color: #7161ef;
   z-index: 1;
-  width: 100vw;
+  min-width: 800px;
 }
 
 h1 {
@@ -13,4 +13,10 @@ h1 {
   padding: 13px 0 10px 20px;
   color: #fbf1f2;
   filter: drop-shadow(4px 1px 0 #2B2749);
+}
+
+@media (max-width: 600px) {
+  header {
+    min-width: 0;
+  }
 }
