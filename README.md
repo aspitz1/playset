@@ -1,6 +1,6 @@
 # Playset
 
-[Deployed Site](https://playset.onrender.com/)
+[Deployed Site](https://playset.onrender.com/) - Please be patient, Playset is deployed on a free service. It will take about 30sec to spin up after 15min of inactivity.
 
 [Link to the API Repo](https://github.com/aspitz1/playset-api)
 ## About this Project
@@ -58,6 +58,9 @@ Playset is currently a demo. Once multiple users are enabled, use Playset to tra
 * Cleans data from outside API for Front-end use
 * Caches data using Redis to improve performance 
 * Stores user data in Postgres database
+
+<img width="1117" alt="Screen Shot 2022-09-25 at 8 48 04 PM" src="https://user-images.githubusercontent.com/95593550/192178268-b1b03673-ba02-413a-8976-207cf2a1f69c.png">
+
 
 ## Roadmap
 - [ ] Add multi user support through user accounts and authentication
