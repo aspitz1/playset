@@ -68,3 +68,6 @@ Playset is currently a demo. Once multiple users are enabled, use Playset to tra
 ## Contributors
 * [Anna Spitz](https://github.com/aspitz1) - [Linkedin](https://www.linkedin.com/in/aspitz1/)
 
+#### Legal
+Portions of Playset are unofficial Fan Content permitted under the Wizards of the Coast Fan Content Policy. The literal and graphical information presented on this site about Magic: The Gathering, including card images, the mana symbols, and Oracle text, is copyright Wizards of the Coast, LLC, a subsidiary of Hasbro, Inc. Playset is not produced by, endorsed by, supported by, or affiliated with Wizards of the Coast.
+
