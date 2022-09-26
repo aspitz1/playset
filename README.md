@@ -1,6 +1,6 @@
 # Playset
 
-[Deployed Site](https://playset.onrender.com/)
+[Deployed Site](https://playset.onrender.com/) - Please be patient, Playset is deployed on a free service. It will take about 30sec to spin up after 15min of inactivity.
 
 [Link to the API Repo](https://github.com/aspitz1/playset-api)
 ## About this Project
