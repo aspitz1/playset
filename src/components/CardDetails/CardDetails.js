@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import AddNewCard from "../AddNewCard/AddNewCard";
 import UpdateCard from "../UpdateCard/UpdateCard";
@@ -93,5 +94,24 @@ function CardDetails({
     </main>
   );
 }
+
+CardDetails.propTypes = {
+  showCardInfo: PropTypes.func,
+  selectedCard: PropTypes.object,
+  collection: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageUrl: PropTypes.string,
+      id: PropTypes.string,
+      amount: PropTypes.number,
+      name: PropTypes.string,
+      magicApiId: PropTypes.string,
+    })
+  ),
+  error: PropTypes.string,
+  handleAddCardToCollection: PropTypes.func,
+  handleUpdateCardInCollection: PropTypes.func,
+  handleDeleteCardFromCollection: PropTypes.func,
+  updateMsg: PropTypes.string,
+};
 
 export default CardDetails;

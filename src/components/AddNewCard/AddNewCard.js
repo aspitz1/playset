@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 import "./AddNewCard.css";
 
@@ -28,6 +29,12 @@ function AddNewCard({ handleAddCardToCollection, error, updateMsg }) {
       </button>
     </form>
   );
+}
+
+AddNewCard.propTypes ={
+  handleAddCardToCollection: PropTypes.func,
+  error: PropTypes.string,
+  updateMsg: PropTypes.string
 }
 
 export default AddNewCard;

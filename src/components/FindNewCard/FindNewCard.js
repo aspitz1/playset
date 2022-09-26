@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import "./FindNewCard.css";
 
-function FindNewCard({ handleNewCardSearch }) {
+function FindNewCard() {
   const [cardName, setCardName] = useState("");
   const navigate = useNavigate();
 

@@ -1,4 +1,5 @@
 import Navbar from "../Navbar/Navbar";
+import PropTypes from "prop-types";
 
 import "./Header.css";
 
@@ -24,5 +25,22 @@ function Header({
     </header>
   );
 }
+
+Header.propTypes = {
+  buttonText: PropTypes.string,
+  setError: PropTypes.func,
+  collection: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageUrl: PropTypes.string,
+      id: PropTypes.string,
+      amount: PropTypes.number,
+      name: PropTypes.string,
+      magicApiId: PropTypes.string,
+    })
+  ),
+  setFilterCredentials: PropTypes.func,
+  setFilteredCards: PropTypes.func,
+  filterCredentials: PropTypes.string,
+};
 
 export default Header;

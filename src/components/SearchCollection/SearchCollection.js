@@ -1,4 +1,4 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./SearchCollection.css";
 
@@ -30,5 +30,20 @@ function SearchCollection({
     </section>
   );
 }
+
+SearchCollection.propTypes = {
+  collection: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageUrl: PropTypes.string,
+      id: PropTypes.string,
+      amount: PropTypes.number,
+      name: PropTypes.string,
+      magicApiId: PropTypes.string,
+    })
+  ),
+  setFilterCredentials: PropTypes.func,
+  setFilteredCards: PropTypes.func,
+  filterCredentials: PropTypes.string,
+};
 
 export default SearchCollection;

@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import SingleCard from "../SingleCard/SingleCard";
 
@@ -31,5 +32,21 @@ function AllCards({ handleNewCardSearch, cards, showCardInfo, error, status }) {
     </main>
   );
 }
+
+AllCards.prototype = {
+  handleNewCardSearch: PropTypes.func,
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      imageUrl: PropTypes.string,
+      id: PropTypes.string,
+      amount: PropTypes.number,
+      name: PropTypes.string,
+      magicApiId: PropTypes.string,
+    })
+  ),
+  showCardInfo: PropTypes.func,
+  error: PropTypes.string,
+  status: PropTypes.string,
+};
 
 export default AllCards;

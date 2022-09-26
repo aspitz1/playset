@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 import "./UpdateCard.css";
 
@@ -55,5 +56,13 @@ function UpdateCard({
     </div>
   );
 }
+
+UpdateCard.propTypes = {
+  amount: PropTypes.string,
+  handleUpdateCardInCollection: PropTypes.func,
+  handleDeleteCardFromCollection: PropTypes.func,
+  error: PropTypes.string,
+  updateMsg: PropTypes.string
+};
 
 export default UpdateCard;
