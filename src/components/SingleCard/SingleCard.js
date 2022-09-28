@@ -19,7 +19,7 @@ SingleCard.propTypes = {
   card: PropTypes.shape({
     imageUrl: PropTypes.string,
     id: PropTypes.string,
-    amount: PropTypes.string,
+    amount: PropTypes.number,
     name: PropTypes.string,
     magicApiId: PropTypes.string
   })

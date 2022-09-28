@@ -10,7 +10,13 @@ function UpdateCard({
   error,
   updateMsg,
 }) {
-  const [newAmount, setNewAmount] = useState(amount);
+  const [newAmount, setNewAmount] = useState(amount); 
+
+  useEffect(() => {
+    if(!amount) {
+      setNewAmount(amount);
+    }
+  }, [amount]);
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +64,7 @@ function UpdateCard({
 }
 
 UpdateCard.propTypes = {
-  amount: PropTypes.string,
+  amount: PropTypes.number,
   handleUpdateCardInCollection: PropTypes.func,
   handleDeleteCardFromCollection: PropTypes.func,
   error: PropTypes.string,

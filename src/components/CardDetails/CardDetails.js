@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import AddNewCard from "../AddNewCard/AddNewCard";
@@ -19,12 +19,6 @@ function CardDetails({
 }) {
   const { magicApiId } = useParams();
 
-  useEffect(() => {
-    if(collection) {
-      showCardInfo(magicApiId);
-    }
-  }, [collection]);
-
   const {
     name,
     manaCost,
@@ -39,6 +33,10 @@ function CardDetails({
     inCollection,
     amount,
   } = selectedCard;
+
+    useEffect(() => {
+      showCardInfo(magicApiId);
+    }, [collection]);
 
   const legalitiesList =
     legalities &&
@@ -78,6 +76,7 @@ function CardDetails({
             {!inCollection && name ? (
               <AddNewCard
                 error={error}
+                updateMsg={updateMsg}
                 handleAddCardToCollection={handleAddCardToCollection}
               />
             ) : (
