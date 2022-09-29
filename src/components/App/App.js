@@ -129,7 +129,7 @@ function App() {
       .catch((err) => setError(err.message));
   };
 
-  const showCardInfo = (magicApiId) => {
+  const handleShowCardInfo = (magicApiId) => {
     setSelectedCard({});
     const foundCard = searchResults.find(
       (card) => card.magicApiId === magicApiId
@@ -164,7 +164,7 @@ function App() {
             <Header
               buttonText={"search collection"}
               collection={collection}
-              showCardInfo={showCardInfo}
+              handleShowCardInfo={handleShowCardInfo}
               setFilterCredentials={setFilterCredentials}
               setFilteredCards={setFilteredCards}
               filterCredentials={filterCredentials}
@@ -175,7 +175,7 @@ function App() {
               status={
                 filterCredentials ? "No matches where found." : "Loading..."
               }
-              showCardInfo={showCardInfo}
+              handleShowCardInfo={handleShowCardInfo}
               handleNewCardSearch={null}
             />
             <Footer />
@@ -202,7 +202,7 @@ function App() {
               error={error}
               status={"Loading..."}
               handleNewCardSearch={handleNewCardSearch}
-              showCardInfo={showCardInfo}
+              handleShowCardInfo={handleShowCardInfo}
             />
             <Footer />
           </div>
@@ -219,7 +219,7 @@ function App() {
               handleAddCardToCollection={handleAddCardToCollection}
               handleUpdateCardInCollection={handleUpdateCardInCollection}
               handleDeleteCardFromCollection={handleDeleteCardFromCollection}
-              showCardInfo={showCardInfo}
+              handleShowCardInfo={handleShowCardInfo}
               error={error}
               updateMsg={updateMsg}
             />

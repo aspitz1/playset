@@ -8,7 +8,7 @@ import UpdateCard from "../UpdateCard/UpdateCard";
 import "./CardDetails.css";
 
 function CardDetails({
-  showCardInfo,
+  handleShowCardInfo,
   selectedCard,
   collection,
   error,
@@ -34,8 +34,13 @@ function CardDetails({
     amount,
   } = selectedCard;
 
+  const ref = useRef(true);
+
     useEffect(() => {
-      showCardInfo(magicApiId);
+      if(collection.length && ref.current) {
+        handleShowCardInfo(magicApiId);
+        ref.current = false;
+      }
     }, [collection]);
 
   const legalitiesList =
