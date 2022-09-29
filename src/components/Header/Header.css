@@ -6,11 +6,20 @@ header {
   min-width: 800px;
 }
 
+.heading-wrapper {
+    padding: 13px 0 10px 20px;
+    margin: 0;
+}
+
+.heading-wrapper > p {
+  margin: 0;
+}
+
 h1 {
   font-family: "Comfortaa", sans-serif;
   font-size: 3em;
   margin: 0;
-  padding: 13px 0 10px 20px;
+  padding-right: 10px;
   color: #fbf1f2;
   filter: drop-shadow(4px 1px 0 #2B2749);
 }

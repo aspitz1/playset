@@ -13,7 +13,10 @@ function Header({
 }) {
   return (
     <header>
-      <h1>Playset</h1>
+      <div className="heading-wrapper">
+        <h1>Playset</h1>
+        <p>Magic Card Collection Tracker</p>
+      </div>
       <Navbar
         buttonText={buttonText}
         setError={setError}
