@@ -71,7 +71,7 @@ Playset is currently a demo. Once multiple users are enabled, use Playset to tra
 * Caches data using Redis to improve performance 
 * Stores user data in Postgres database
 
-<img width="1117" alt="Screen Shot 2022-09-25 at 8 48 04 PM" src="https://user-images.githubusercontent.com/95593550/192178268-b1b03673-ba02-413a-8976-207cf2a1f69c.png">
+![Screen Shot 2022-09-29 at 12 52 50 PM](https://user-images.githubusercontent.com/95593550/193106233-e5edc69d-d4cd-47b7-8dc1-c62ad41bb2c8.png)
 
 
 ## Roadmap
