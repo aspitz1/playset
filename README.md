@@ -32,6 +32,7 @@ Playset is a Magic Card collection tracker. It provides a search function allowi
 
 ## Testing
 * Cypress
+____
 
 ![Playset](https://user-images.githubusercontent.com/95593550/192172039-b63dbc61-9888-4aec-839b-351b3f5d450a.gif)
 
