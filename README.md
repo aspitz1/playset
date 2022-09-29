@@ -6,6 +6,17 @@
 ## About this Project
 Playset is a Magic Card collection tracker. It provides a search function allowing the user to find cards and see card specs. The user can specify the amount of cards in their collection, update the amount of cards in their collection or delete cards from their collection. Playset is suitable for use on desktops, tablets or phones. Currently Playset assumes one user, allowing for multiple users is first up on Playset's roadmap.
 
+# Table of Contents
+1. [Built With](#built-with)
+2. [Testing](#testing)
+3. [Getting Started](#getting-started)
+4. [Local Setup](#local-set-up)
+5. [Usage](#usage)
+6. [Features](#features)
+7. [Roadmap](#roadmap)
+8. [Contributors](#contributors)
+9. [Legal](#legal)
+
 ## Built With
 ### Front-end
 * React
