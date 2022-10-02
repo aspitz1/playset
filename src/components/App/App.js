@@ -6,6 +6,8 @@ import AllCards from "../AllCards/AllCards";
 import FindNewCard from "../FindNewCard/FindNewCard";
 import CardDetails from "../CardDetails/CardDetails";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import UpdateCard from "../UpdateCard/UpdateCard";
+import AddNewCard from "../AddNewCard/AddNewCard";
 import Footer from "../Footer/Footer";
 
 import './App.css';
@@ -31,7 +33,10 @@ function App() {
   useEffect(() => {
     getCollection()
       .then((data) => {
-        setCollection(data.cards);
+        const cards = data.cards.map(card => {
+          return {...card, amount: card.amount.toString()}
+        });
+        setCollection(cards);
       })
       .catch((err) => setError(err.message));
   }, []);
@@ -58,6 +63,7 @@ function App() {
         setSelectedCard({
           ...selectedCard,
           inCollection: true,
+          amount: numOfCards
         });
         setCollection([
           ...collection,
@@ -101,7 +107,7 @@ function App() {
         );
         setTimeout(() => {
           setUpdateMsg("");
-        }, 5000);
+        }, 4000);
       })
       .catch((err) => setError(err.message));
   };
@@ -124,7 +130,7 @@ function App() {
         setUpdateMsg(data.message);
         setTimeout(() => {
           setUpdateMsg("");
-        }, 5000);
+        }, 4000);
       })
       .catch((err) => setError(err.message));
   };
@@ -183,7 +189,7 @@ function App() {
         }
       />
       <Route
-        path="/findNewCard"
+        path="/search"
         element={
           <div className="page-container">
             <Header buttonText={"home"} setError={setError} />
@@ -213,16 +219,36 @@ function App() {
         element={
           <div className="page-container">
             <Header buttonText={"home"} setError={setError} />
-            <CardDetails
-              selectedCard={selectedCard}
-              collection={collection}
-              handleAddCardToCollection={handleAddCardToCollection}
-              handleUpdateCardInCollection={handleUpdateCardInCollection}
-              handleDeleteCardFromCollection={handleDeleteCardFromCollection}
-              handleShowCardInfo={handleShowCardInfo}
-              error={error}
-              updateMsg={updateMsg}
-            />
+            <div className="single-card-wrapper">
+              <CardDetails
+                selectedCard={selectedCard}
+                collection={collection}
+                handleAddCardToCollection={handleAddCardToCollection}
+                handleUpdateCardInCollection={handleUpdateCardInCollection}
+                handleDeleteCardFromCollection={handleDeleteCardFromCollection}
+                handleShowCardInfo={handleShowCardInfo}
+                error={error}
+                updateMsg={updateMsg}
+              />
+              <section className="update-add-wrapper">
+                {!selectedCard.inCollection ? (
+                  <AddNewCard
+                    error={error}
+                    updateMsg={updateMsg}
+                    handleAddCardToCollection={handleAddCardToCollection}
+                  />
+                ) : (
+                  <UpdateCard
+                    amount={selectedCard.amount}
+                    updateMsg={updateMsg}
+                    handleUpdateCardInCollection={handleUpdateCardInCollection}
+                    handleDeleteCardFromCollection={
+                      handleDeleteCardFromCollection
+                    }
+                  />
+                )}
+              </section>
+            </div>
             <Footer />
           </div>
         }

@@ -2,20 +2,12 @@ import { useParams } from "react-router";
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-import AddNewCard from "../AddNewCard/AddNewCard";
-import UpdateCard from "../UpdateCard/UpdateCard";
-
 import "./CardDetails.css";
 
 function CardDetails({
   handleShowCardInfo,
   selectedCard,
-  collection,
-  error,
-  handleAddCardToCollection,
-  handleUpdateCardInCollection,
-  handleDeleteCardFromCollection,
-  updateMsg,
+  collection
 }) {
   const { magicApiId } = useParams();
 
@@ -30,8 +22,6 @@ function CardDetails({
     legalities,
     imageUrl,
     artist,
-    inCollection,
-    amount,
   } = selectedCard;
 
   const ref = useRef(true);
@@ -60,7 +50,6 @@ function CardDetails({
       {!name ? (
         <h2 className="loading">Loading...</h2>
       ) : (
-        <div className="single-card-wrapper">
           <article className="single-card-description">
             <h2 className="name">
               {name}{" "}
@@ -77,23 +66,6 @@ function CardDetails({
             <p className="card-text">{text}</p>
             <ul className="legalities-list">{legalitiesList}</ul>
           </article>
-          <section className="update-add-wrapper">
-            {!inCollection && name ? (
-              <AddNewCard
-                error={error}
-                updateMsg={updateMsg}
-                handleAddCardToCollection={handleAddCardToCollection}
-              />
-            ) : (
-              <UpdateCard
-                amount={amount}
-                updateMsg={updateMsg}
-                handleUpdateCardInCollection={handleUpdateCardInCollection}
-                handleDeleteCardFromCollection={handleDeleteCardFromCollection}
-              />
-            )}
-          </section>
-        </div>
       )}
     </main>
   );
@@ -106,7 +78,7 @@ CardDetails.propTypes = {
     PropTypes.shape({
       imageUrl: PropTypes.string,
       id: PropTypes.string,
-      amount: PropTypes.number,
+      amount: PropTypes.string,
       name: PropTypes.string,
       magicApiId: PropTypes.string,
     })

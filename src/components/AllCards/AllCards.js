@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 import SingleCard from "../SingleCard/SingleCard";
@@ -39,7 +39,7 @@ AllCards.prototype = {
     PropTypes.shape({
       imageUrl: PropTypes.string,
       id: PropTypes.string,
-      amount: PropTypes.number,
+      amount: PropTypes.string,
       name: PropTypes.string,
       magicApiId: PropTypes.string,
     })

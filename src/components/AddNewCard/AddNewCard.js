@@ -13,21 +13,25 @@ function AddNewCard({ handleAddCardToCollection, error, updateMsg }) {
   };
 
   return (
-    <form className="add-new-card-form" onSubmit={(e) => handleSubmit(e)}>
-      {error && <p className="error">{error}</p>}
-      {updateMsg && <p className="update">{updateMsg}</p>}
-      <input
-        className="add-card-input"
-        type="number"
-        min="1"
-        max="40"
-        value={numOfCards}
-        onChange={(e) => setNumOfCards(e.target.value)}
-      />
-      <button type="submit" className="add-card-btn" disabled={!numOfCards}>
-        ADD
-      </button>
-    </form>
+    <div className="add-new-card-form-wrapper">
+      <div className="add-new-card-feedback-wrapper">
+        {error && <p className="error">{error}</p>}
+        {updateMsg && <p className="update">{updateMsg}</p>}
+      </div>
+      <form className="add-new-card-form" onSubmit={(e) => handleSubmit(e)}>
+        <input
+          className="add-card-input"
+          type="number"
+          min="1"
+          max="40"
+          value={numOfCards}
+          onChange={(e) => setNumOfCards(e.target.value)}
+        />
+        <button type="submit" className="add-card-btn" disabled={!numOfCards}>
+          ADD
+        </button>
+      </form>
+    </div>
   );
 }
 
