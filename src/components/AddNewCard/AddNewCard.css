@@ -1,11 +1,16 @@
-.add-new-card-form {
+.add-new-card-form-wrapper { 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px 0;
   background-color: #7161ef;
   border-top: 1px solid #2b2749;
   width: 100%;
+}
+
+.add-new-card-feedback-wrapper {
+  height: 20px;
 }
 
 .add-card-input {

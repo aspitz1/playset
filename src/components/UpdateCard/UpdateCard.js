@@ -30,41 +30,45 @@ function UpdateCard({
 
   return (
     <div className="update-card-wrapper">
-      <form onSubmit={(e) => handleUpdateSubmit(e)}>
+      <div className="update-form-feedback-wrapper">
         {error && <p className="error">{error}</p>}
         {updateMsg && <p className="update">{updateMsg}</p>}
-        <label className="update-label">
-          Update Amount:
-          <input
-            className="input-number"
-            type="number"
-            min="1"
-            max="40"
-            value={newAmount}
-            onChange={(e) => setNewAmount(e.target.value)}
-          />
-        </label>
+      </div>
+      <div className="form-deleteBtn-wrapper">
+        <form onSubmit={(e) => handleUpdateSubmit(e)}>
+          <label className="update-label">
+            Update Amount:
+            <input
+              className="input-number"
+              type="number"
+              min="1"
+              max="40"
+              value={newAmount}
+              onChange={(e) => setNewAmount(e.target.value)}
+            />
+          </label>
+          <button
+            className="update-btn"
+            type="submit"
+            disabled={newAmount == amount}
+          >
+            UPDATE
+          </button>
+        </form>
         <button
-          className="update-btn"
-          type="submit"
-          disabled={newAmount == amount}
+          className="delete-btn"
+          disabled={false}
+          onClick={(e) => handleDelete(e)}
         >
-          UPDATE
+          DELETE
         </button>
-      </form>
-      <button
-        className="delete-btn"
-        disabled={false}
-        onClick={(e) => handleDelete(e)}
-      >
-        DELETE
-      </button>
+      </div>
     </div>
   );
 }
 
 UpdateCard.propTypes = {
-  amount: PropTypes.number,
+  amount: PropTypes.string,
   handleUpdateCardInCollection: PropTypes.func,
   handleDeleteCardFromCollection: PropTypes.func,
   error: PropTypes.string,

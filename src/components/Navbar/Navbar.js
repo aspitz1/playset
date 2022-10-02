@@ -20,8 +20,8 @@ function Navbar({
 
   return (
     <nav>
-      <Link to="/findNewCard">
-        {location.pathname !== "/findNewCard" && (
+      <Link to="/search">
+        {location.pathname !== "/search" && (
           <NavButton buttonText={"Find New Card"} setError={setError} />
         )}
       </Link>
