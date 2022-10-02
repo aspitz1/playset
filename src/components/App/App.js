@@ -63,7 +63,7 @@ function App() {
         setSelectedCard({
           ...selectedCard,
           inCollection: true,
-          amount: numOfCards
+          amount: numOfCards.toString()
         });
         setCollection([
           ...collection,
@@ -71,7 +71,7 @@ function App() {
             name: card.name,
             magicApiId: card.magicApiId,
             imageUrl: card.imageUrl,
-            amount: card.amount,
+            amount: card.amount.toString(),
             id: card.id,
           },
         ]);
@@ -90,14 +90,14 @@ function App() {
       .then((data) => {
         const updatedCards = collection.map((card) => {
           if (card.id === data.card.id) {
-            card.amount = data.card.amount;
+            card.amount = data.card.amount.toString();
           }
           return card;
         });
 
         const updatedSelectedCard = {
           ...selectedCard,
-          amount: data.card.amount,
+          amount: data.card.amount.toString(),
         };
 
         setSelectedCard(updatedSelectedCard);
@@ -219,7 +219,6 @@ function App() {
         element={
           <div className="page-container">
             <Header buttonText={"home"} setError={setError} />
-            <div className="single-card-wrapper">
               <CardDetails
                 selectedCard={selectedCard}
                 collection={collection}
@@ -230,25 +229,6 @@ function App() {
                 error={error}
                 updateMsg={updateMsg}
               />
-              <section className="update-add-wrapper">
-                {!selectedCard.inCollection ? (
-                  <AddNewCard
-                    error={error}
-                    updateMsg={updateMsg}
-                    handleAddCardToCollection={handleAddCardToCollection}
-                  />
-                ) : (
-                  <UpdateCard
-                    amount={selectedCard.amount}
-                    updateMsg={updateMsg}
-                    handleUpdateCardInCollection={handleUpdateCardInCollection}
-                    handleDeleteCardFromCollection={
-                      handleDeleteCardFromCollection
-                    }
-                  />
-                )}
-              </section>
-            </div>
             <Footer />
           </div>
         }

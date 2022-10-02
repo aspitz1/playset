@@ -36,7 +36,7 @@ Header.propTypes = {
     PropTypes.shape({
       imageUrl: PropTypes.string,
       id: PropTypes.string,
-      amount: PropTypes.number,
+      amount: PropTypes.string,
       name: PropTypes.string,
       magicApiId: PropTypes.string,
     })

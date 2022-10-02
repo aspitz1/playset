@@ -2,12 +2,20 @@ import { useParams } from "react-router";
 import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
+import UpdateCard from "../UpdateCard/UpdateCard";
+import AddNewCard from "../AddNewCard/AddNewCard";
+
 import "./CardDetails.css";
 
 function CardDetails({
   handleShowCardInfo,
   selectedCard,
-  collection
+  collection,
+  handleAddCardToCollection,
+  handleDeleteCardFromCollection,
+  handleUpdateCardInCollection,
+  error,
+  updateMsg
 }) {
   const { magicApiId } = useParams();
 
@@ -22,6 +30,8 @@ function CardDetails({
     legalities,
     imageUrl,
     artist,
+    inCollection,
+    amount
   } = selectedCard;
 
   const ref = useRef(true);
@@ -50,6 +60,7 @@ function CardDetails({
       {!name ? (
         <h2 className="loading">Loading...</h2>
       ) : (
+        <div className="single-card-wrapper">
           <article className="single-card-description">
             <h2 className="name">
               {name}{" "}
@@ -66,6 +77,25 @@ function CardDetails({
             <p className="card-text">{text}</p>
             <ul className="legalities-list">{legalitiesList}</ul>
           </article>
+          <section className="update-add-wrapper">
+            {!inCollection ? (
+              <AddNewCard
+                error={error}
+                updateMsg={updateMsg}
+                handleAddCardToCollection={handleAddCardToCollection}
+              />
+            ) : (
+              <UpdateCard
+                amount={amount}
+                updateMsg={updateMsg}
+                handleUpdateCardInCollection={handleUpdateCardInCollection}
+                handleDeleteCardFromCollection={
+                  handleDeleteCardFromCollection
+                }
+              />
+            )}
+          </section>
+        </div>
       )}
     </main>
   );
