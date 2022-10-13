@@ -8,7 +8,9 @@ describe('Card details page', () => {
       data
     )
       .intercept("https://playset-api.onrender.com/api/cards", cards)
-      .visit("http://localhost:3000/card/8e8097bd-ccd9-5f97-b9c2-0c8ee324accc");
+      .visit(
+        "https://playset.onrender.com/card/8e8097bd-ccd9-5f97-b9c2-0c8ee324accc"
+      );
   });
 
   it('Should have a card detail view', () => {
