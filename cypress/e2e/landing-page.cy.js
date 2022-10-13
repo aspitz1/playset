@@ -2,8 +2,9 @@ import cards from '../fixtures/collection.json';
 
 describe('Landing page', () => {
   beforeEach(() => {
-    cy.intercept('https://playset-api.onrender.com/api/cards', cards)
-      .visit("http://localhost:3000/")
+    cy.intercept("https://playset-api.onrender.com/api/cards", cards).visit(
+      "https://playset.onrender.com/"
+    );
   });
 
   it('Should have navbar at top of page', () => {

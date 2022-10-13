@@ -4,8 +4,9 @@ import card from "../fixtures/post-res.json";
 
 describe("Add new card", () => {
   beforeEach(() => {
-    cy.intercept("https://playset-api.onrender.com/api/cards", cards)
-      .visit("http://localhost:3000/");
+    cy.intercept("https://playset-api.onrender.com/api/cards", cards).visit(
+      "https://playset.onrender.com/"
+    );
   });
 
   it('Should search for new cards by name', () => {

@@ -3,7 +3,7 @@ import cards from '../fixtures/collection.json';
 describe('Search collection', () => {
   beforeEach(() => {
     cy.intercept("https://playset-api.onrender.com/api/cards", cards).visit(
-      "http://localhost:3000/"
+      "https://playset.onrender.com/"
     );
   });
 
