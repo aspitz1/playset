@@ -3,24 +3,15 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@2.2.0
 
-jobs:
-  build_and_test:
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: npm
-      - run:
-          name: Run tests
-          command: npm test 
-      - run : 
-          name : Run build
-          command: npm run build 
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - .
 workflows:
-  build_and_test_workflow:
+  build:
     jobs:
-      - build_and_test
+      - cypress/install:
+          build: "npm run build" # run a custom app build step
+      - cypress/run:
+          requires:
+            - cypress/install
+          record: false # record results on Cypress Dashboard
+          parallel: true # split all specs across machines
+          parallelism: 4 # use 4 CircleCI machines to finish quickly
+          group: "all tests" # name this group "all tests" on the dashboard
