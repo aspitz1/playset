@@ -1,7 +1,5 @@
 # Playset
 
-[Deployed Site](https://playset.onrender.com/) - Please be patient, Playset is deployed on a free service. It will take about 30sec to spin up after 15min of inactivity.
-
 [Link to the API Repo](https://github.com/aspitz1/playset-api)
 ## About this Project
 Playset is a Magic Card collection tracker. It provides a search function allowing the user to find cards and see card specs. The user can specify the amount of cards in their collection, update the amount of cards in their collection or delete cards from their collection. Playset is suitable for use on desktops, tablets or phones. Currently Playset assumes one user, allowing for multiple users is first up on Playset's roadmap.
